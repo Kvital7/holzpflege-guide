@@ -61,25 +61,24 @@
     }
 
     /* HERO SECTION */
-.hero {
-  background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 6rem 1.5rem;
-  border-radius: 14px;
-  margin: 2rem auto;
-  max-width: 1000px;
-  color: #fff;
-  text-align: center;
-}
+    .hero {
+      background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 6rem 1.5rem;
+      border-radius: 14px;
+      margin: 2rem auto;
+      max-width: 1000px;
+      color: #fff;
+      text-align: center;
+    }
 
-.hero-inner {
-  background: rgba(0,0,0,0.45);
-  padding: 2rem;
-  border-radius: 12px;
-}
-
+    .hero-inner {
+      background: rgba(0,0,0,0.45);
+      padding: 2rem;
+      border-radius: 12px;
+    }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
@@ -201,6 +200,7 @@
 </head>
 
 <body>
+
 <header style="background: var(--beige-dark); padding: 2.5rem 1.5rem; text-align: center; border-bottom: 1px solid #ddd;">
   <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
     <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo" style="height: 80px; margin-top: 12px;">
@@ -208,14 +208,6 @@
   </div>
   <p style="font-size: 1.2rem; margin-top: 0.5rem; color: #444;">Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
 </header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Holzmöbel pflegen – natürlich & einfach</h1>
-    <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel.</p>
-    <a href="#holz-oelen" class="btn">Jetzt starten</a>
-  </div>
-</section>
 
 <nav>
   <ul>
@@ -230,69 +222,27 @@
 
 <main>
 
-  <section id="start">
-    <h2>Holzmöbel pflegen – einfach & natürlich</h2>
-    <p>Holz ist langlebig, schön und natürlich – aber nur, wenn es richtig gepflegt wird. Der Holzpflege‑Guide zeigt dir Schritt für Schritt, wie du deine Möbel schützt, reinigst und ölst.</p>
-
-    <h3>Beliebte Anleitungen</h3>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <h3>Holz richtig ölen</h3>
-        <p>Schritt‑für‑Schritt Anleitung für natürliche, langlebige Oberflächen.</p>
-        <a href="#holz-oelen" class="btn">Ansehen</a>
-      </div>
-
-      <div class="card">
-        <h3>Flecken entfernen</h3>
-        <p>Wasserflecken, Fettflecken & Kratzer sicher behandeln.</p>
-        <a href="#flecken-entfernen" class="btn">Ansehen</a>
-      </div>
-
-      <div class="card">
-        <h3>Holzpflege Fehler</h3>
-        <p>Die 7 häufigsten Fehler – und wie du sie vermeidest.</p>
-        <a href="#fehler-vermeiden" class="btn">Ansehen</a>
-      </div>
-
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Holzmöbel pflegen – natürlich & einfach</h1>
+      <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel.</p>
+      <a href="#holz-oelen" class="btn">Jetzt starten</a>
     </div>
   </section>
 
-  <section id="holz-oelen">
-    <h2>Holz richtig ölen – Schritt für Schritt</h2>
-    <p>Holz trocknet mit der Zeit aus. Ein gutes Öl schützt vor Flecken, Feuchtigkeit und Abnutzung.</p>
-  </section>
-
-  <section id="produkte-vergleich">
-    <h2>Die besten Holzöle für Anfänger</h2>
-    <p>Ein Überblick über die beliebtesten Öle für natürliche Holzpflege.</p>
-  </section>
-
-  <section id="fehler-vermeiden">
-    <h2>Die 7 größten Holzpflege‑Fehler</h2>
-    <p>Und wie du sie vermeidest.</p>
-  </section>
-
-  <section id="flecken-entfernen">
-    <h2>Flecken entfernen</h2>
-    <p>Wasserflecken, Fettflecken und Kratzer sicher behandeln.</p>
-  </section>
-
-  <section id="outdoor">
-    <h2>Outdoor Holzpflege</h2>
-    <p>Gartenmöbel richtig schützen.</p>
-  </section>
+  <!-- ab hier deine Startseiten‑Sektionen -->
+  <section id="start"> ... </section>
+  <section id="holz-oelen"> ... </section>
+  <section id="produkte-vergleich"> ... </section>
+  <section id="fehler-vermeiden"> ... </section>
+  <section id="flecken-entfernen"> ... </section>
+  <section id="outdoor"> ... </section>
 
 </main>
 
 <footer>
   &copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen
 </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
