@@ -191,7 +191,7 @@
       transform: translateY(-6px);
     }
 
-    /* MOBILE HEADER + BUTTON FIX */
+    /* MOBILE HEADER FIX */
     @media (max-width: 600px) {
 
       header {
@@ -248,15 +248,9 @@
         font-size: 1.85rem;
       }
 
-      /* BUTTON FIX */
       .btn {
-        width: auto;
-        max-width: 90%;
-        display: block;
-        margin: 1rem auto;
-        padding: 0.75rem 1.4rem;
-        font-size: 0.95rem;
-        border-radius: 14px;
+        width: 100%;
+        text-align: center;
       }
 
       .card {
@@ -275,7 +269,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -434,4 +427,46 @@
       <div class="card"><h3>1. Reinigen</h3><p>Algen & Schmutz entfernen.</p></div>
       <div class="card"><h3>2. Entgrauen</h3><p>Farbe auffrischen.</p></div>
       <div class="card"><h3>3. Outdoor‑Öl</h3><p>Mit UV‑Schutz.</p></div>
-      <div class="card"><h3>4. Regelmäßig ölen</h3><
+      <div class="card"><h3>4. Regelmäßig ölen</h3><p>1–2× pro Jahr.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Häufige Fragen</h2>
+
+    <h3>Wie oft ölen?</h3>
+    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro Saison.</p>
+
+    <h3>Welches Öl?</h3>
+    <p>Innen: Leinöl, Danish Oil, Hartwachsöl. Außen: Terrassen‑/Outdoor‑Öl.</p>
+
+    <h3>Wasserflecken?</h3>
+    <p>Helle: Wärme. Dunkle: leicht schleifen + nachölen.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>&copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen</div>
+    <nav>
+      <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#holz-oelen">Holz ölen</a></li>
+        <li><a href="#produkte-vergleich">Produkte</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div style="margin-top:0.6rem; font-size:0.8rem; color:#777;">
+      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
