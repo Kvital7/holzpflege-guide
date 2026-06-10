@@ -28,18 +28,12 @@
       line-height: 1.75;
     }
 
-    /* HEADER TOP (Logo + Titel) */
+    /* HEADER TOP (Logo + Titel) – scrollt normal weg */
     .header-top {
       background: var(--beige-dark);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid #ddd;
-      transition: transform 0.35s ease, opacity 0.35s ease;
-    }
-
-    .header-top.hide {
-      transform: translateY(-100%);
-      opacity: 0;
     }
 
     .header-inner {
@@ -73,13 +67,17 @@
       color: #555;
     }
 
-    /* HEADER NAV (nur Menü, sticky) */
+    /* HEADER NAV – bleibt sticky oben */
     .header-nav {
+      background: var(--beige-dark);
       position: sticky;
       top: 0;
       z-index: 50;
+      padding: 0.6rem 0 0.8rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
+    /* NAVIGATION */
     nav ul {
       list-style: none;
       margin: 0.8rem auto 0;
@@ -280,6 +278,7 @@
 
 <header>
 
+  <!-- OBERER TEIL: Logo + Titel (scrollt normal weg) -->
   <div class="header-top">
     <div class="header-inner">
       <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
@@ -290,6 +289,7 @@
     </div>
   </div>
 
+  <!-- UNTERER TEIL: Navigation bleibt sticky -->
   <div class="header-nav">
     <nav>
       <ul>
@@ -459,23 +459,6 @@
   </section>
 
 </main>
-
-<script>
-  const headerTop = document.getElementById('headerTop');
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll && currentScroll > 40) {
-      headerTop.classList.add('hide');
-    } else {
-      headerTop.classList.remove('hide');
-    }
-
-    lastScroll = currentScroll;
-  });
-</script>
 
 </body>
 </html>
