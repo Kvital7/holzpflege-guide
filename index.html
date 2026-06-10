@@ -242,6 +242,25 @@
         font-size: 0.95rem;
         border-radius: 14px;
       }
+      /* HEADER-TOP verschwindet beim Scrollen */
+      .header-top {
+        transition: transform 0.35s ease, opacity 0.35s ease;
+      }
+      
+      .header-top.hide {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      
+      /* NAV bleibt sticky */
+      .header-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--beige-dark);
+        padding: 0.6rem 0 0.8rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
     }
 
     @keyframes fadeIn {
@@ -255,6 +274,23 @@
     }
   </style>
 </head>
+
+  <script>
+  const headerTop = document.getElementById('headerTop');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 40) {
+      headerTop.classList.add('hide');
+    } else {
+      headerTop.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
 
 <body>
 
