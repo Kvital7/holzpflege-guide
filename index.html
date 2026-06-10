@@ -144,9 +144,20 @@ nav a {
   text-decoration: none;
   color: var(--forest);
   font-weight: 600;
-  padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: 0.2s;
+}
+
+
+/* Mobile überschreibt sauber */
+@media (max-width: 600px) {
+  nav a {
+    padding: 0.7rem 0.9rem;   /* gleiche Höhe wie Buttons */
+    display: flex;            /* verhindert Verschieben */
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+  }
 }
 
 nav a:hover {
