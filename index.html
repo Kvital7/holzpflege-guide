@@ -20,16 +20,6 @@
       --shadow-dark: rgba(0,0,0,0.12);
     }
 
-    <script>
-  const burger = document.getElementById('burger');
-  const nav = document.querySelector('nav ul');
-
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    nav.classList.toggle('open');
-  });
-</script>
-    
     body {
       margin: 0;
       background: var(--beige-light);
@@ -201,63 +191,6 @@
       transform: translateY(-6px);
     }
 
-    /* BURGER ICON */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 0.4rem;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.burger span {
-  width: 26px;
-  height: 3px;
-  background: var(--forest);
-  border-radius: 3px;
-  transition: 0.3s;
-}
-
-/* ANIMATION: Burger → X */
-.burger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.burger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* MOBILE NAV */
-@media (max-width: 800px) {
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: var(--white);
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 14px;
-    box-shadow:
-      8px 8px 18px rgba(0,0,0,0.08),
-      -8px -8px 18px rgba(255,255,255,0.8);
-  }
-
-  nav ul.open {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-    margin: 0 auto;
-  }
-}
-
     /* MOBILE HEADER + BUTTON FIX */
     @media (max-width: 600px) {
 
@@ -355,12 +288,6 @@
   </div>
 
   <nav>
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    
     <ul>
       <li><a href="#start">Startseite</a></li>
       <li><a href="#holz-oelen">Holz ölen</a></li>
