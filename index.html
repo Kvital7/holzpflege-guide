@@ -1,766 +1,543 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  
-  <link rel="stylesheet" href="/assets/css/style.css">
-  
-  <title>Holzpflege‑Guide – Expertenwissen, Anleitungen & Produktempfehlungen für Holz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Der Holzpflege‑Guide bietet praxisnahe Anleitungen, Expertenwissen und Produktvergleiche für Terrassen, Möbel, Parkett und Gartenholz. Lernen Sie, wie Holz dauerhaft schön und geschützt bleibt." />
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512.png">
+
+  <title>Holzpflege‑Guide – Holzmöbel ölen, reinigen & pflegen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Holzpflege‑Guide: Schritt‑für‑Schritt Anleitungen zum Holz ölen, reinigen und auffrischen. Tipps für Indoor & Outdoor Holzmöbel – natürlich, einfach und verständlich.">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Holzpflege-Guide",
-    "url": "https://www.holzpflege-guide.de/",
-    "description": "Der Holzpflege-Guide bietet praxisnahe Anleitungen, Expertenwissen und Produktvergleiche für Terrassen, Möbel, Parkett und Gartenholz.",
+    "url": "https://deinedomain.de",
+    "description": "Anleitungen zum Holz ölen, reinigen und pflegen.",
     "publisher": {
       "@type": "Organization",
-      "name": "Holzpflege-Guide",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.holzpflege-guide.de/logo.png"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.holzpflege-guide.de/?s={search_term_string}",
-      "query-input": "required name=search_term_string"
+      "name": "Holzpflege-Guide"
     }
   }
   </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Holzpflege-Guide",
-    "url": "https://www.holzpflege-guide.de/",
-    "logo": "https://www.holzpflege-guide.de/logo.png",
-    "sameAs": [
-      "https://www.pinterest.de/",
-      "https://www.instagram.com/"
-    ]
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Startseite",
-        "item": "https://www.holzpflege-guide.de/"
-        }
-      ]
-  }
-  </script>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
+
+    :root {
+      --beige-light: #F4EFE6;
+      --beige-dark: #E8DFD1;
+      --wood-brown: #A67C52;
+      --forest: #2F4F4F;
+      --petrol: #0A6F6A;
+      --white: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      background: var(--beige-light);
+      font-family: 'Inter', sans-serif;
+      color: #2F2F2F;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--beige-dark);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      height: 100px;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      color: var(--forest);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #444;
+    }
+
+    .hero {
+      background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 6rem 1.5rem;
+      border-radius: 14px;
+      margin: 2rem auto;
+      max-width: 1000px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-inner {
+      background: rgba(0,0,0,0.45);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--forest);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: var(--petrol);
+      color: var(--white);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: var(--white);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-top: 0;
+      color: var(--forest);
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      color: var(--petrol);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.6rem;
+      background: var(--wood-brown);
+      color: var(--white);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: 0.25s;
+    
+      /* NEU: Abstand zum Text */
+      margin-top: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+
+    .btn:hover {
+      background: var(--forest);
+      transform: translateY(-2px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body data-theme="light">
-  <div class="page">
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <div class="logo">
-            <div class="logo-mark">H</div>
-            <div class="logo-text">
-              <div class="logo-title">Holzpflege-Guide</div>
-              <div class="logo-sub">Ratgeber &amp; Expertenwissen</div>
-            </div>
-          </div>
 
-          <div class="nav-links">
-            <a href="#kategorien">Kategorien</a>
-            <a href="#ratgeber">Ratgeber</a>
-            <a href="#experten">Expertenwissen</a>
-            <a href="#produkte">Produkte</a>
-            <a href="#faq">FAQ</a>
-          </div>
+<body>
 
-          <div class="nav-actions">
-            <button class="theme-toggle" id="themeToggle" aria-label="Dark Mode umschalten">☾</button>
-            <button class="btn btn-ghost">Newsletter</button>
-            <button class="btn btn-primary">Holzpflege lernen</button>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Premium Holzpflege-Ratgeber</div>
-            <h1 class="hero-title">Holz richtig pflegen – langlebig, schön und geschützt.</h1>
-            <p class="hero-sub">
-              Der Holzpflege‑Guide ist Ihr digitales Magazin für nachhaltige Holzpflege: 
-              mit praxisnahen Anleitungen, Expertenwissen und unabhängigen Produktempfehlungen 
-              für Möbel, Terrassen, Parkett und Gartenmöbel. 
-              Für alle, die Holz lieben und langfristig schützen möchten.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#ratgeber" class="btn btn-primary">
-                Holzpflege lernen
-                <span>→</span>
-              </a>
-              <a href="#kategorien" class="btn btn-ghost">
-                Ratgeber entdecken
-              </a>
-            </div>
-
-            <div class="hero-meta">
-              <div class="hero-meta-item">
-                <span class="hero-meta-dot"></span>
-                500+ Fachartikel
-              </div>
-              <div class="hero-meta-item">
-                <span class="hero-meta-dot"></span>
-                Experten-Tipps
-              </div>
-              <div class="hero-meta-item">
-                <span class="hero-meta-dot"></span>
-                Schritt-für-Schritt-Anleitungen
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-media">
-            <div class="hero-card">
-              <div class="hero-wood-bg"></div>
-              <div class="hero-card-overlay">
-                <div class="hero-card-tag">
-                  <span style="width:8px;height:8px;border-radius:999px;background:#C89B6D;display:inline-block;"></span>
-                  Premium Holzoberfläche
-                </div>
-                <div class="hero-card-title">Terrassenholz richtig ölen</div>
-                <div class="hero-card-sub">
-                  Schritt-für-Schritt-Anleitung für UV-Schutz, Feuchtigkeitsschutz und eine dauerhaft schöne Oberfläche.
-                </div>
-                <div class="hero-card-meta">
-                  <div>Lesedauer: 8 Min.</div>
-                  <div class="hero-card-badge">Außenbereich · Terrasse</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-floating">
-              <strong>Individuelle Pflegepläne</strong>
-              Erhalten Sie saisonale Empfehlungen für Ihre Holzarten – von Eiche bis Teak – direkt in Ihrem Postfach.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Der Premium‑Ratgeber für alle Holzoberflächen</h2>
-          <p class="section-sub">
-            Finden Sie schnell den passenden Ratgeber – ob für den Innenbereich, den Garten 
-            oder spezielle Holzarten. Alle Inhalte sind praxisnah, verständlich und 
-            für langfristigen Holzschutz optimiert.
-          </p>
-        </div>
-      </section>
-      
-      <section class="section" id="kategorien">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="section-tag">Kategorien</div>
-              <h2 class="section-title">Holzpflege nach Bereich, Holzart &amp; Produkt</h2>
-              <p class="section-sub">
-                Finden Sie schnell den passenden Ratgeber – ob für den Innenbereich, den Garten oder spezielle Holzarten.
-              </p>
-            </div>
-            <div class="pill-nav">
-              <button class="active">Alle</button>
-              <button>Innenbereich</button>
-              <button>Außenbereich</button>
-              <button>Holzarten</button>
-              <button>Pflegeprodukte</button>
-            </div>
-          </div>
-
-          <div class="grid grid-4">
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <div class="card-tag">Innenbereich</div>
-                  <div class="card-title">Holz im Wohnraum</div>
-                </div>
-              </div>
-              <p class="card-sub">
-                Pflege für Holzmöbel, Parkett, Treppen und Küchenarbeitsplatten – für ein warmes, langlebiges Zuhause.
-              </p>
-              <div class="card-chip-row">
-                <span class="chip">Holzmöbel</span>
-                <span class="chip">Parkett</span>
-                <span class="chip">Küchenarbeitsplatten</span>
-                <span class="chip">Treppen</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <div class="card-tag">Außenbereich</div>
-                  <div class="card-title">Holz im Freien</div>
-                </div>
-              </div>
-              <p class="card-sub">
-                Schutz vor UV-Strahlung, Regen und Schmutz für Terrassen, Gartenmöbel, Zäune und Carports.
-              </p>
-              <div class="card-chip-row">
-                <span class="chip">Terrasse</span>
-                <span class="chip">Gartenmöbel</span>
-                <span class="chip">Zäune</span>
-                <span class="chip">Carports</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <div class="card-tag">Holzarten</div>
-                  <div class="card-title">Die richtige Pflege je Holzart</div>
-                </div>
-              </div>
-              <p class="card-sub">
-                Von Eiche bis Douglasie – erfahren Sie, welche Produkte und Intervalle zu Ihrer Holzart passen.
-              </p>
-              <div class="card-chip-row">
-                <span class="chip">Eiche</span>
-                <span class="chip">Buche</span>
-                <span class="chip">Teak</span>
-                <span class="chip">Lärche</span>
-                <span class="chip">Douglasie</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <div class="card-tag">Pflegeprodukte</div>
-                  <div class="card-title">Öle, Wachse &amp; mehr</div>
-                </div>
-              </div>
-              <p class="card-sub">
-                Produktvergleiche, Anwendungstipps und Empfehlungen für Öle, Wachse, Lasuren, Lacke und Reiniger.
-              </p>
-              <div class="card-chip-row">
-                <span class="chip">Öle</span>
-                <span class="chip">Wachse</span>
-                <span class="chip">Lasuren</span>
-                <span class="chip">Lacke</span>
-                <span class="chip">Reiniger</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="ratgeber">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="section-tag">Beliebte Ratgeber</div>
-              <h2 class="section-title">Holzpflege wie im Premium-Magazin</h2>
-              <p class="section-sub">
-                Kuratierte Fachartikel mit großen Bildern, klaren Anleitungen und praxisnahen Tipps – optimiert für Lesbarkeit und SEO.
-              </p>
-            </div>
-            <div class="search-box">
-              <input type="search" placeholder="Ratgeber durchsuchen (z. B. „Terrasse ölen“)" aria-label="Ratgeber durchsuchen" />
-              <svg viewBox="0 0 24 24" fill="none">
-                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"></circle>
-                <line x1="15.5" y1="15.5" x2="20" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></line>
-              </svg>
-            </div>
-          </div>
-
-          <div class="grid grid-3">
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Terrasse</span>
-                  <span class="article-time">
-                    <span></span>
-                    8 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Terrassenholz richtig ölen</h3>
-                <p class="article-excerpt">
-                    Wie Sie Terrassenholz richtig reinigen, vorbereiten und ölen – inklusive Tipps zu UV‑Schutz, Feuchtigkeit und optimalen Pflegeintervallen.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Parkett</span>
-                  <span class="article-time">
-                    <span></span>
-                    6 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Parkett reinigen ohne Schäden</h3>
-                <p class="article-excerpt">
-                    Die wichtigsten Dos & Don’ts bei der Parkettpflege: richtige Reiniger, Feuchtigkeitskontrolle und Schutz vor Kratzern.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Teakholz</span>
-                  <span class="article-time">
-                    <span></span>
-                    7 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Teakholz pflegen wie ein Profi</h3>
-                <p class="article-excerpt">
-                  So behalten Teak‑Gartenmöbel ihre edle Optik – von der Reinigung über Entgrauer bis zum passenden Teaköl.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Lasuren &amp; Öle</span>
-                  <span class="article-time">
-                    <span></span>
-                    5 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Lasur oder Öl – was ist besser?</h3>
-                <p class="article-excerpt">
-                  Wann Öl sinnvoll ist, wann Lasur Vorteile bietet und wie Sie das richtige System für Ihr Holz auswählen.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Holzschutz</span>
-                  <span class="article-time">
-                    <span></span>
-                    9 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Schimmelprävention bei Holz</h3>
-                <p class="article-excerpt">
-                  Ursachen, Warnsignale und Maßnahmen, um Schimmelbildung auf Holzoberflächen langfristig zu vermeiden.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="card article-card">
-              <div class="article-media"></div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-category">Pflegepläne</span>
-                  <span class="article-time">
-                    <span></span>
-                    4 Min. Lesezeit
-                  </span>
-                </div>
-                <h3 class="article-title">Jahresplan für Außenholz</h3>
-                <p class="article-excerpt">
-                  Saisonale Checkliste für Terrasse, Zaun &amp; Gartenmöbel – damit Ihr Holz das ganze Jahr geschützt bleibt.
-                </p>
-                <a href="#" class="article-link">
-                  Zum Ratgeber
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="experten">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="section-tag">Expertenbereich</div>
-              <h2 class="section-title">Wissensplattform für nachhaltige Holzpflege</h2>
-              <p class="section-sub">
-                  Vertiefende Inhalte zu Holzschutz, Feuchtigkeit, UV‑Strahlung und Schimmelprävention – klar erklärt und ergänzt durch moderne Infografiken. Ideal für alle, die Holz langfristig schützen möchten.
-              </p>
-            </div>
-          </div>
-
-          <div class="expert-grid">
-            <div>
-              <div class="card" style="margin-bottom:1.5rem;">
-                <div class="card-tag">Pflegepläne &amp; Saisonale Empfehlungen</div>
-                <h3 class="card-title" style="margin-top:0.4rem;">Individuelle Pflegepläne für Ihre Holzoberflächen</h3>
-                <p class="card-sub">
-                  Erstellen Sie auf Basis von Holzart, Standort und Nutzung einen Pflegeplan, der zu Ihrem Alltag passt.
-                  Von der jährlichen Terrassenpflege bis zur monatlichen Möbelpflege im Innenraum.
-                </p>
-                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.1rem;margin-top:0.4rem;">
-                  <li>Innen- und Außenbereich getrennt planbar</li>
-                  <li>Empfehlungen für Öle, Lasuren, Wachse und Reiniger</li>
-                  <li>Saisonale Erinnerungen für kritische Zeiträume</li>
-                </ul>
-              </div>
-
-              <div class="expert-infocards">
-                <div class="infographic-card">
-                  <div class="infographic-title">Holzschutz-Faktoren</div>
-                  <div class="infographic-metric">4 Kernbereiche</div>
-                  <ul style="font-size:0.85rem;color:var(--text-muted);padding-left:1.1rem;">
-                    <li>UV-Schutz</li>
-                    <li>Feuchtigkeitsschutz</li>
-                    <li>Mechanische Belastung</li>
-                    <li>Biologischer Befall</li>
-                  </ul>
-                </div>
-
-                <div class="infographic-card">
-                  <div class="infographic-title">Empfohlene Pflegeintervalle</div>
-                  <div class="infographic-bars">
-                    <div class="bar-row">
-                      <span>Terrassenholz</span>
-                      <div class="bar-track">
-                        <div class="bar-fill" style="width:90%;"></div>
-                      </div>
-                      <span>1×/Jahr</span>
-                    </div>
-                    <div class="bar-row">
-                      <span>Gartenmöbel</span>
-                      <div class="bar-track">
-                        <div class="bar-fill" style="width:70%;"></div>
-                      </div>
-                      <span>1×/Jahr</span>
-                    </div>
-                    <div class="bar-row">
-                      <span>Parkett</span>
-                      <div class="bar-track">
-                        <div class="bar-fill" style="width:50%;"></div>
-                      </div>
-                      <span>alle 2–3 Jahre</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <aside class="card">
-              <div class="card-tag">Holzschutz &amp; Prävention</div>
-              <h3 class="card-title" style="margin-top:0.4rem;">Schimmel, UV-Strahlung &amp; Feuchtigkeit verstehen</h3>
-              <p class="card-sub">
-                Lernen Sie, wie Holz auf Umwelteinflüsse reagiert – und wie Sie Schäden frühzeitig erkennen und vermeiden.
-              </p>
-              <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.1rem;margin-top:0.4rem;">
-                <li>Schimmelprävention bei hoher Luftfeuchtigkeit</li>
-                <li>UV-Schutz für stark besonnte Flächen</li>
-                <li>Feuchtigkeitsschutz für horizontale Flächen</li>
-                <li>Tipps für kritische Übergangsbereiche (z. B. Terrassentüren)</li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="produkte">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="section-tag">Produkt-Empfehlungen</div>
-              <h2 class="section-title">Vergleichstabellen für Holzöle, Lasuren &amp; Reiniger</h2>
-              <p class="section-sub">
-                Klar strukturierte Vergleiche mit Bewertungen, Vor- und Nachteilen – ideal für Affiliate-Integration und transparente Produktempfehlungen.
-              </p>
-            </div>
-          </div>
-
-          <div class="table-wrapper" style="margin-bottom:1.5rem;">
-            <div class="table-header">
-              <div>
-                <div class="table-header-title">Holzöle im Vergleich</div>
-                <div class="table-header-sub">Für Terrassen, Gartenmöbel und stark beanspruchte Außenflächen.</div>
-              </div>
-              <span class="badge badge-neutral">Beispiel-Tabelle</span>
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Produkt</th>
-                  <th>Einsatzbereich</th>
-                  <th>Eigenschaften</th>
-                  <th>Bewertung</th>
-                  <th>Vorteile</th>
-                  <th>Nachteile</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Premium Terrassenöl</td>
-                  <td>Terrasse, Außen</td>
-                  <td>UV-Schutz, wasserabweisend</td>
-                  <td>★★★★★</td>
-                  <td><span class="badge badge-positive">Langlebig</span></td>
-                  <td>Höherer Preis</td>
-                </tr>
-                <tr>
-                  <td>Teak-Öl Classic</td>
-                  <td>Gartenmöbel, Teak</td>
-                  <td>Betont Maserung, leicht zu verarbeiten</td>
-                  <td>★★★★☆</td>
-                  <td><span class="badge badge-positive">Einfache Anwendung</span></td>
-                  <td>Häufigere Auffrischung nötig</td>
-                </tr>
-                <tr>
-                  <td>Innenholz-Öl Matt</td>
-                  <td>Möbel, Innen</td>
-                  <td>Matt, lebensmittelecht</td>
-                  <td>★★★★☆</td>
-                  <td><span class="badge badge-positive">Ideal für Küchen</span></td>
-                  <td>Nur für Innen geeignet</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="table-wrapper">
-            <div class="table-header">
-              <div>
-                <div class="table-header-title">Holzreiniger &amp; Pflege-Sets</div>
-                <div class="table-header-sub">Für die optimale Vorbereitung vor Öl, Lasur oder Lack.</div>
-              </div>
-              <span class="badge badge-neutral">Affiliate-freundliches Layout</span>
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Produkt</th>
-                  <th>Typ</th>
-                  <th>Geeignet für</th>
-                  <th>Bewertung</th>
-                  <th>Besonderheit</th>
-                  <th>Vergleich</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Holzreiniger Konzentrat</td>
-                  <td>Reiniger</td>
-                  <td>Terrasse, Gartenmöbel</td>
-                  <td>★★★★☆</td>
-                  <td>Starke Verschmutzungen</td>
-                  <td><a href="#" class="article-link">Vergleichen →</a></td>
-                </tr>
-                <tr>
-                  <td>Pflege-Set Parkett</td>
-                  <td>Set</td>
-                  <td>Parkett, Innen</td>
-                  <td>★★★★★</td>
-                  <td>Reiniger + Pflegeöl</td>
-                  <td><a href="#" class="article-link">Vergleichen →</a></td>
-                </tr>
-                <tr>
-                  <td>Gartenmöbel-Set Teak</td>
-                  <td>Set</td>
-                  <td>Teak-Gartenmöbel</td>
-                  <td>★★★★☆</td>
-                  <td>Reiniger + Teak-Öl</td>
-                  <td><a href="#" class="article-link">Vergleichen →</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="faq">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <div class="section-tag">FAQ</div>
-              <h2 class="section-title">Häufige Fragen zur Holzpflege</h2>
-              <p class="section-sub">
-                Kurz und verständlich beantwortet – mit Links zu vertiefenden Ratgebern für alle, die tiefer einsteigen möchten.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq">
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <span>Wie oft sollte Holz geölt werden?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-answer">
-                Im Außenbereich wird in der Regel eine Auffrischung einmal pro Jahr empfohlen, insbesondere bei stark
-                bewitterten Flächen wie Terrassen. Im Innenbereich hängt das Intervall von Nutzung und Beanspruchung ab –
-                häufig genutzte Flächen wie Esstische oder Arbeitsplatten profitieren von einer Auffrischung alle 1–2 Jahre.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <span>Wann ist eine Lasur sinnvoll?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-answer">
-                Lasuren sind ideal, wenn Sie Holz im Außenbereich vor UV-Strahlung und Feuchtigkeit schützen möchten und
-                gleichzeitig die Holzstruktur sichtbar bleiben soll. Besonders bei Zäunen, Fassaden oder Carports ist eine
-                hochwertige Lasur oft die beste Wahl.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <span>Kann man altes Holz retten?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-answer">
-                In vielen Fällen ja. Vergraute oder verschmutzte Oberflächen lassen sich durch Reinigen, Schleifen und
-                anschließende Behandlung mit Öl, Lasur oder Lack deutlich aufwerten. Entscheidend ist, ob das Holz strukturell
-                noch intakt ist und keine tiefgreifenden Schäden wie Fäulnis vorliegen.
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <span>Welches Öl eignet sich für Teakholz?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-answer">
-                Für Teakholz eignen sich spezielle Teaköle, die auf die dichte Struktur und den hohen Eigenölgehalt des Holzes
-                abgestimmt sind. Sie betonen die natürliche Farbe, schützen vor Vergrauung und lassen sich in der Regel leicht
-                auffrischen, ohne abzuschleifen.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="newsletter">
-        <div class="container">
-          <div class="newsletter">
-            <h2 class="newsletter-title">Erhalten Sie die besten Holzpflege-Tipps direkt per E-Mail.</h2>
-            <p class="newsletter-sub">
-              Erhalten Sie exklusive Pflegepläne, saisonale Checklisten und Produktempfehlungen – kompakt, verständlich und maximal 1–2 E‑Mails pro Monat.
-            </p>
-            <form class="newsletter-form">
-              <input type="email" class="newsletter-input" placeholder="Ihre E-Mail-Adresse" required />
-              <button type="submit" class="btn btn-primary">
-                Jetzt anmelden
-              </button>
-            </form>
-            <p class="newsletter-note">
-              Sie können sich jederzeit mit einem Klick wieder abmelden. Keine Weitergabe Ihrer Daten an Dritte.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <div class="logo">
-              <div class="logo-mark">H</div>
-              <div class="logo-text">
-                <div class="logo-title">Holzpflege-Guide</div>
-                <div class="logo-sub">Wissen · Praxis · Produkte</div>
-              </div>
-            </div>
-            <p style="margin-top:0.8rem;font-size:0.85rem;color:var(--text-muted);max-width:22rem;">
-              Ihr digitales Magazin für nachhaltige Holzpflege – von der ersten Reinigung bis zur langfristigen Schutzbehandlung.
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <div>
-              <div class="footer-heading">Ratgeber</div>
-              <a href="#ratgeber">Innenbereich</a>
-              <a href="#ratgeber">Außenbereich</a>
-              <a href="#ratgeber">Pflegepläne</a>
-            </div>
-            <div>
-              <div class="footer-heading">Holzarten</div>
-              <a href="#kategorien">Eiche</a>
-              <a href="#kategorien">Teak</a>
-              <a href="#kategorien">Lärche &amp; Douglasie</a>
-            </div>
-            <div>
-              <div class="footer-heading">Service</div>
-              <a href="#produkte">Pflegeprodukte</a>
-              <a href="#newsletter">Newsletter</a>
-              <a href="#">Kontakt</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div>© <span id="year"></span> Holzpflege-Guide. Alle Rechte vorbehalten.</div>
-          <div style="display:flex;gap:1rem;">
-            <a href="#">Datenschutz</a>
-            <a href="#">Impressum</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+<header style="background: var(--beige-dark); padding: 2.5rem 1.5rem; text-align: center; border-bottom: 1px solid #ddd;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo" style="height: 80px; margin-top: 12px;">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--forest); margin: 0;">Holzpflege‑Guide</h1>
   </div>
+  <p style="font-size: 1.2rem; margin-top: 0.5rem; color: #444;">Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+</header>
 
-  <script src="/assets/js/main.js"></script>
+<nav>
+  <ul>
+    <li><a href="#start">Startseite</a></li>
+    <li><a href="#holz-oelen">Holz ölen</a></li>
+    <li><a href="#produkte-vergleich">Produkte</a></li>
+    <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
+    <li><a href="#flecken-entfernen">Flecken</a></li>
+    <li><a href="#outdoor">Outdoor</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Holzmöbel pflegen – natürlich & einfach</h2>
+      <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel – für Indoor und Outdoor.</p>
+      <a href="#holz-oelen" class="btn">Holz ölen Anleitung öffnen</a>
+    </div>
+  </section>
+
+  <section id="start">
+    <h2>Holzmöbel pflegen – einfach & natürlich</h2>
+    <p>Holz ist langlebig, schön und natürlich – aber nur, wenn es richtig gepflegt wird. 
+       Der Holzpflege‑Guide zeigt dir Schritt für Schritt, wie du deine Möbel schützt, reinigst und ölst – 
+       ohne Vorwissen und ohne teure Spezialprodukte. Lerne, wie du 
+       <a href="#holz-oelen">Holz richtig ölst</a>, 
+       <a href="#flecken-entfernen">Flecken sicher entfernst</a> 
+       und <a href="#fehler-vermeiden">typische Holzpflege‑Fehler vermeidest</a>.</p>
+  
+    <h3>Beliebte Anleitungen</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Holz richtig ölen</h3>
+        <p>Die wichtigste Anleitung für natürliche, langlebige Oberflächen.</p>
+        <a href="#holz-oelen" class="btn">Ansehen</a>
+      </div>
+
+      <div class="card">
+        <h3>Flecken entfernen</h3>
+        <p>Wasserflecken, Fettflecken & Kratzer sicher behandeln.</p>
+        <a href="#flecken-entfernen" class="btn">Ansehen</a>
+      </div>
+
+      <div class="card">
+        <h3>Holzpflege Fehler</h3>
+        <p>Die 7 häufigsten Fehler – und wie du sie vermeidest.</p>
+        <a href="#fehler-vermeiden" class="btn">Ansehen</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="holz-oelen">
+    <h2>Holz richtig ölen – Schritt für Schritt</h2>
+    <p>Holz verliert im Laufe der Zeit Feuchtigkeit und wirkt dann trocken, stumpf oder fleckig. 
+       Durch das richtige Öl erhält die Oberfläche neuen Schutz, wird widerstandsfähiger und 
+       gewinnt ihre natürliche Maserung zurück. Mit einer sauberen Vorbereitung und der passenden 
+       Technik erzielst du langlebige, hochwertige Ergebnisse.</p>
+
+    <h3>Wann sollte man Holz ölen?</h3>
+    <ul>
+      <li>Wenn die Oberfläche trocken, matt oder rau wirkt</li>
+      <li>Wenn Wasser nicht mehr abperlt und sofort einzieht</li>
+      <li>Nach dem Schleifen oder Auffrischen einer alten Oberfläche</li>
+      <li>Bei neuen, unbehandelten oder offenporigen Holzmöbeln</li>
+    </ul>
+
+    <h3>Die wichtigsten Schritte</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h3>1. Oberfläche reinigen</h3>
+        <p>Staub, Fett und alte Rückstände gründlich entfernen. Nur eine saubere Oberfläche 
+           nimmt das Öl gleichmäßig auf und verhindert Fleckenbildung.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Holz leicht anschleifen</h3>
+        <p>Schleife das Holz mit 180–240er Körnung leicht an, damit die Oberfläche glatter wird 
+           und das Öl gleichmäßig einziehen kann. Immer in Faserrichtung arbeiten.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Öl dünn auftragen</h3>
+        <p>Das Öl mit einem fusselfreien Tuch oder Pinsel in Faserrichtung einarbeiten. 
+           Eine dünne Schicht reicht völlig aus – zu viel Öl führt zu klebrigen Stellen.</p>
+      </div>
+
+      <div class="card">
+        <h3>4. Überschuss abwischen</h3>
+        <p>Nach 10–20 Minuten den nicht eingezogenen Überschuss vollständig abnehmen. 
+           So bleibt die Oberfläche glatt und trocknet ohne Rückstände.</p>
+      </div>
+
+      <div class="card">
+        <h3>5. Trocknen lassen</h3>
+        <p>Die geölte Fläche 12–24 Stunden ruhen lassen. Für stark beanspruchte Möbel 
+           empfiehlt sich eine zweite dünne Schicht nach der Trocknung.</p>
+      </div>
+    </div>
+
+    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
+  </section>
+
+  <section id="produkte-vergleich">
+    <h2>Die besten Holzöle für natürliche Holzpflege</h2>
+    <p>Je nach Holzart und gewünschtem Ergebnis eignen sich unterschiedliche Öle. 
+       Hier findest du eine klare Übersicht über die beliebtesten Varianten und ihre Vorteile.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Leinöl</h3>
+        <p>Natürlich, tief eindringend und ideal für unbehandelte Hölzer. 
+           Betont die Maserung und sorgt für eine warme, matte Oberfläche.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+
+      <div class="card">
+        <h3>Hartwachsöl</h3>
+        <p>Kombiniert Öl und Wachs für eine besonders robuste Oberfläche. 
+           Perfekt für Tische, Küchenarbeitsplatten und stark genutzte Möbel.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+
+      <div class="card">
+        <h3>Danish Oil</h3>
+        <p>Schnell trocknend, leicht aufzutragen und ideal für Anfänger. 
+           Sorgt für eine seidenmatte, widerstandsfähige Oberfläche.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
+    </p>
+  </section>
+
+  <section id="fehler-vermeiden">
+    <h2>Die 7 größten Holzpflege‑Fehler – und wie du sie vermeidest</h2>
+    <p>Viele Schäden an Holzmöbeln entstehen nicht durch Abnutzung, sondern durch falsche Pflege. 
+       Mit diesen typischen Fehlern bist du nicht allein – und mit ein paar einfachen Regeln 
+       kannst du sie dauerhaft vermeiden.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>1. Zu viel Öl auftragen</h3>
+        <p>Ein häufiger Fehler: dicke Ölschichten. Sie trocknen schlecht, kleben und ziehen Staub an. 
+           Besser: immer dünn auftragen und Überschuss nach 10–20 Minuten abwischen.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Ohne Reinigung ölen</h3>
+        <p>Staub, Fett und alte Rückstände verhindern, dass das Öl einzieht. 
+           Eine gründliche Reinigung ist Pflicht, bevor du mit dem Ölen beginnst.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Falsche Körnung beim Schleifen</h3>
+        <p>Zu grobes Schleifpapier hinterlässt sichtbare Spuren, zu feines verschließt die Poren. 
+           Optimal sind 180–240er Körnung für eine glatte, aufnahmefähige Oberfläche.</p>
+      </div>
+
+      <div class="card">
+        <h3>4. In kreisenden Bewegungen schleifen</h3>
+        <p>Schleife immer in Faserrichtung. Kreisbewegungen erzeugen matte Stellen und 
+           unruhige Oberflächen, die später sichtbar bleiben.</p>
+      </div>
+
+      <div class="card">
+        <h3>5. Öl nicht vollständig abwischen</h3>
+        <p>Wenn überschüssiges Öl auf der Oberfläche bleibt, entstehen klebrige, fleckige Stellen. 
+           Alles, was nicht einzieht, muss abgenommen werden.</p>
+      </div>
+
+      <div class="card">
+        <h3>6. Zu kurze Trocknungszeiten</h3>
+        <p>Holz braucht Zeit. Wird zu früh weitergearbeitet, kann die Oberfläche stumpf oder fleckig werden. 
+           Mindestens 12–24 Stunden trocknen lassen.</p>
+      </div>
+
+      <div class="card">
+        <h3>7. Ungeeignete Produkte verwenden</h3>
+        <p>Nicht jedes Öl passt zu jedem Holz. Naturöle, Hartwachsöle und Danish Oil haben unterschiedliche Eigenschaften. 
+           Wähle das Öl passend zur Nutzung und Holzart.</p>
+      </div>
+    </div>
+
+    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
+  </section>
+
+  <section id="flecken-entfernen">
+    <h2>Flecken entfernen – Wasser, Fett & Kratzer richtig behandeln</h2>
+    <p>Holz ist ein natürliches Material und reagiert empfindlich auf Feuchtigkeit, Hitze und Fett. 
+       Viele Flecken lassen sich jedoch mit einfachen Methoden entfernen – ganz ohne aggressive Chemie. 
+       Hier findest du die häufigsten Probleme und die passenden Lösungen.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Wasserflecken (hell)</h3>
+        <p>Helle Wasserflecken entstehen, wenn Feuchtigkeit in die obere Schicht eindringt. 
+           Lege ein Baumwolltuch auf die Stelle und fahre mit einem warmen Bügeleisen kurz darüber. 
+           Die Wärme zieht die Feuchtigkeit heraus.</p>
+      </div>
+
+      <div class="card">
+        <h3>Wasserflecken (dunkel)</h3>
+        <p>Dunkle Flecken sitzen tiefer im Holz. Hier hilft meist nur leichtes Anschleifen 
+           (180–240er Körnung) und anschließendes Nachölen. Bei sehr tiefen Flecken: 
+           Oxalsäure als Holzaufheller verwenden.</p>
+      </div>
+
+      <div class="card">
+        <h3>Fettflecken</h3>
+        <p>Fett zieht schnell ein. Streue Backpulver oder Speisestärke auf die Stelle und 
+           lasse es mehrere Stunden einwirken. Das Pulver zieht das Fett aus dem Holz. 
+           Danach vorsichtig abwischen und ggf. nachölen.</p>
+      </div>
+
+      <div class="card">
+        <h3>Kratzer</h3>
+        <p>Feine Kratzer lassen sich oft mit etwas Öl oder Möbelwachs auspolieren. 
+           Bei tieferen Kratzern hilft leichtes Anschleifen und eine dünne Schicht Öl 
+           oder Hartwachsöl.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ringe von Gläsern</h3>
+        <p>Glasränder entstehen durch Feuchtigkeit + Druck. Reibe die Stelle mit einer 
+           Mischung aus Öl und Salz ein oder nutze eine Politur aus Natron und Wasser. 
+           Danach die Oberfläche nachpflegen.</p>
+      </div>
+
+      <div class="card">
+        <h3>Hitze- oder Brandflecken</h3>
+        <p>Leichte Brandspuren können vorsichtig ausgeschliffen werden. 
+           Bei dunklen, tiefen Stellen ist oft eine komplette Auffrischung der Oberfläche nötig.</p>
+      </div>
+    </div>
+
+    <a href="#holz-oelen" class="btn">Oberfläche nachbehandeln</a>
+  </section>
+
+  <section id="outdoor">
+    <h2>Outdoor Holzpflege – Gartenmöbel richtig schützen</h2>
+    <p>Holz im Außenbereich ist Sonne, Regen, Temperaturschwankungen und Feuchtigkeit ausgesetzt. 
+       Ohne regelmäßige Pflege verliert es schnell Farbe, wird rau oder bekommt Risse. 
+       Mit der richtigen Behandlung bleiben Gartenmöbel viele Jahre schön und wetterfest.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>1. Reinigung vor jeder Behandlung</h3>
+        <p>Algen, Schmutz und Grauschleier entfernen. Am besten mit einer weichen Bürste 
+           und einem milden Holzreiniger. Hochdruckreiniger vermeiden – sie beschädigen die Fasern.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Vergrautes Holz auffrischen</h3>
+        <p>UV‑Strahlung lässt Holz vergrauen. Mit einem Entgrauer oder leichtem Anschliff 
+           erhält das Holz seine natürliche Farbe zurück. Danach unbedingt nachölen.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Wetterfestes Öl verwenden</h3>
+        <p>Für draußen eignen sich spezielle Outdoor‑ oder Terrassenöle. 
+           Sie enthalten UV‑Schutz und dringen tiefer ein als normale Möbelöle.</p>
+      </div>
+
+      <div class="card">
+        <h3>4. Öl regelmäßig erneuern</h3>
+        <p>Outdoor‑Holz sollte je nach Witterung 1–2 Mal pro Jahr nachgeölt werden. 
+           Besonders nach dem Winter lohnt sich eine Auffrischung.</p>
+      </div>
+
+      <div class="card">
+        <h3>5. Möbel vor Nässe schützen</h3>
+        <p>Stauende Feuchtigkeit vermeiden: Möbel leicht erhöht stellen, 
+           Abstand zum Boden halten und bei Dauerregen abdecken.</p>
+      </div>
+
+      <div class="card">
+        <h3>6. Richtige Lagerung im Winter</h3>
+        <p>Gartenmöbel trocken und luftig lagern. Nicht in Folie einpacken – 
+           darunter sammelt sich Feuchtigkeit und fördert Schimmel.</p>
+      </div>
+    </div>
+
+    <a href="#produkte-vergleich" class="btn">Geeignete Outdoor‑Öle ansehen</a>
+  </section>
+
+  <section id="faq">
+    <h2>Häufige Fragen zur Holzpflege</h2>
+
+    <h3>Wie oft sollte man Holzmöbel ölen?</h3>
+    <p>Indoor‑Möbel sollten in der Regel alle 1–2 Jahre nachgeölt werden. 
+       Outdoor‑Holz je nach Witterung 1–2 Mal pro Saison.</p>
+
+    <h3>Welches Öl eignet sich für Holzmöbel?</h3>
+    <p>Für den Innenbereich eignen sich Leinöl, Danish Oil oder Hartwachsöl. 
+       Für den Außenbereich sind spezielle Terrassen‑ oder Outdoor‑Öle mit UV‑Schutz ideal.</p>
+
+    <h3>Wie entferne ich Wasserflecken aus Holz?</h3>
+    <p>Helle Wasserflecken lassen sich oft mit Wärme (Baumwolltuch + Bügeleisen) entfernen. 
+       Dunkle Flecken erfordern meist leichtes Anschleifen und anschließendes Nachölen.</p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
