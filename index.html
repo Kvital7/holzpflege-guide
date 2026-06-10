@@ -4,24 +4,37 @@
   <meta charset="UTF-8">
   <title>Holzpflege‑Guide – Holzmöbel ölen, reinigen & pflegen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Holzpflege‑Guide: Schritt‑für‑Schritt Anleitungen zum Holz ölen, reinigen und auffrischen. Tipps für Indoor & Outdoor Holzmöbel – natürlich, einfach und verständlich.">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
+
+    :root {
+      --beige-light: #F4EFE6;
+      --beige-dark: #E8DFD1;
+      --wood-brown: #A67C52;
+      --forest: #2F4F4F;
+      --petrol: #0A6F6A;
+      --white: #FFFFFF;
+      --shadow-light: rgba(255,255,255,0.7);
+      --shadow-dark: rgba(0,0,0,0.12);
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #F4EFE6;
-      color: #333;
+      background: var(--beige-light);
+      font-family: 'Inter', sans-serif;
+      color: #2F2F2F;
+      line-height: 1.75;
     }
 
     /* HEADER TOP (Logo + Titel) */
     .header-top {
-      background: #E8DFD1;
-      padding: 2rem 1rem;
+      background: var(--beige-dark);
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ddd;
       transition: transform 0.35s ease, opacity 0.35s ease;
-      position: relative;
-      z-index: 10;
     }
 
     .header-top.hide {
@@ -29,19 +42,40 @@
       opacity: 0;
     }
 
-    /* SPACER – übernimmt die Höhe des Header-Top */
-    .header-spacer {
-      height: 120px; /* gleiche Höhe wie header-top */
-      transition: height 0.35s ease;
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    .header-spacer.shrink {
-      height: 0px;
+    .header-inner img {
+      height: 70px;
+      border-radius: 12px;
+      box-shadow:
+        4px 4px 10px rgba(0,0,0,0.12),
+        -4px -4px 10px rgba(255,255,255,0.8);
     }
 
-    /* NAVIGATION – bleibt sticky */
+    .header-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--forest);
+    }
+
+    .header-inner p {
+      font-size: 1.05rem;
+      margin: 0.4rem 0 0;
+      color: #555;
+    }
+
+    /* HEADER NAV (nur Menü, sticky) */
     .header-nav {
-      background: #E8DFD1;
+      background: var(--beige-dark);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -51,44 +85,197 @@
 
     nav ul {
       list-style: none;
-      margin: 0;
+      margin: 0.8rem auto 0;
       padding: 0;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 0.6rem;
-      flex-wrap: wrap;
+      max-width: 1000px;
     }
 
     nav a {
       text-decoration: none;
+      color: var(--forest);
+      font-weight: 600;
       padding: 0.45rem 0.9rem;
-      background: white;
       border-radius: 999px;
-      font-weight: bold;
-      color: #2F4F4F;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.9);
+      box-shadow:
+        3px 3px 8px rgba(0,0,0,0.08),
+        -3px -3px 8px rgba(255,255,255,0.9);
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: var(--petrol);
+      color: var(--white);
+      transform: translateY(-1px);
     }
 
     /* HERO */
     .hero {
+      background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 1.5rem;
+      border-radius: 24px;
+      margin: 2rem auto 3.5rem auto;
       max-width: 1000px;
-      margin: 2rem auto;
-      padding: 4rem 1.5rem;
-      background: #0A6F6A;
-      color: white;
-      border-radius: 20px;
+      color: #fff;
       text-align: center;
+      animation: fadeIn 1.1s ease;
+    }
+
+    .hero-inner {
+      background: rgba(0,0,0,0.45);
+      padding: 2.8rem 2.2rem;
+      border-radius: 18px;
+      backdrop-filter: blur(6px);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin: 0 0 1.2rem 0;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
 
     /* SECTIONS */
     section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 20px;
+      background: var(--white);
+      padding: 3.2rem;
+      margin-bottom: 4rem;
+      border-radius: 22px;
+      box-shadow:
+        12px 12px 28px rgba(0,0,0,0.08),
+        -10px -10px 26px rgba(255,255,255,0.7);
+      animation: fadeInUp 0.8s ease;
     }
 
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 1rem 1.9rem;
+      background: var(--wood-brown);
+      color: var(--white);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: 0.25s;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
+
+    .btn:hover {
+      background: var(--forest);
+      transform: translateY(-3px);
+    }
+
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow:
+        8px 8px 18px var(--shadow-dark),
+        -8px -8px 18px var(--shadow-light);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* MOBILE HEADER + BUTTON FIX */
+    @media (max-width: 600px) {
+
+      .header-inner img {
+        height: 40px;
+      }
+
+      .header-inner h1 {
+        font-size: 1.38rem;
+        line-height: 1.15;
+      }
+
+      .header-inner p {
+        font-size: 0.78rem;
+        margin-top: 0.1rem;
+      }
+
+      nav ul {
+        gap: 0.25rem;
+        padding: 0.25rem 0.2rem;
+      }
+
+      nav a {
+        padding: 0.26rem 0.55rem;
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        padding: 3.6rem 1.2rem;
+        margin-top: 1.4rem;
+      }
+
+      .hero-inner {
+        padding: 1.8rem 1.4rem;
+      }
+
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+
+      section {
+        padding: 2rem 1.4rem;
+        margin-bottom: 2.6rem;
+      }
+
+      h2 {
+        font-size: 1.85rem;
+      }
+
+      .btn {
+        width: auto;
+        max-width: 90%;
+        display: block;
+        margin: 1rem auto;
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95rem;
+        border-radius: 14px;
+      }
+
+      .card {
+        padding: 1.4rem;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 
@@ -96,24 +283,26 @@
 
 <header>
 
-  <!-- SCROLL-BEREICH -->
+  <!-- OBERER TEIL: Logo + Titel (wird ausgeblendet beim Scrollen) -->
   <div class="header-top" id="headerTop">
-    <h1>Holzpflege‑Guide</h1>
-    <p>Holzmöbel pflegen – natürlich & langlebig</p>
+    <div class="header-inner">
+      <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
+      <div>
+        <h1>Holzpflege‑Guide</h1>
+        <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SPACER verhindert Scrollblockade -->
-  <div class="header-spacer" id="headerSpacer"></div>
-
-  <!-- STICKY NAV -->
+  <!-- UNTERER TEIL: Navigation bleibt sticky sichtbar -->
   <div class="header-nav">
     <nav>
       <ul>
         <li><a href="#start">Startseite</a></li>
         <li><a href="#holz-oelen">Holz ölen</a></li>
-        <li><a href="#produkte">Produkte</a></li>
-        <li><a href="#fehler">Fehler</a></li>
-        <li><a href="#flecken">Flecken</a></li>
+        <li><a href="#produkte-vergleich">Produkte</a></li>
+        <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
+        <li><a href="#flecken-entfernen">Flecken</a></li>
         <li><a href="#outdoor">Outdoor</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -124,52 +313,160 @@
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
-    <h2>Holzmöbel pflegen – natürlich & einfach</h2>
-    <p>Praktische Anleitungen für langlebige Holzmöbel.</p>
+    <div class="hero-inner">
+      <h2>Holzmöbel pflegen – natürlich & einfach</h2>
+      <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel – für Indoor und Outdoor.</p>
+      <a href="#holz-oelen" class="btn">Holz ölen Anleitung öffnen</a>
+    </div>
   </section>
 
+  <!-- START -->
   <section id="start">
-    <h2>Start</h2>
-    <p>Inhalt …</p>
+    <h2>Holzmöbel pflegen – einfach & natürlich</h2>
+    <p>Holz ist langlebig, schön und natürlich – aber nur, wenn es richtig gepflegt wird. 
+       Der Holzpflege‑Guide zeigt dir Schritt für Schritt, wie du deine Möbel schützt, reinigst und ölst – 
+       ohne Vorwissen und ohne teure Spezialprodukte.</p>
+
+    <h3>Beliebte Anleitungen</h3>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Holz richtig ölen</h3>
+        <p>Die wichtigste Anleitung für natürliche, langlebige Oberflächen.</p>
+        <a href="#holz-oelen" class="btn">Ansehen</a>
+      </div>
+
+      <div class="card">
+        <h3>Flecken entfernen</h3>
+        <p>Wasserflecken, Fettflecken & Kratzer sicher behandeln.</p>
+        <a href="#flecken-entfernen" class="btn">Ansehen</a>
+      </div>
+
+      <div class="card">
+        <h3>Holzpflege Fehler</h3>
+        <p>Die 7 häufigsten Fehler – und wie du sie vermeidest.</p>
+        <a href="#fehler-vermeiden" class="btn">Ansehen</a>
+      </div>
+    </div>
   </section>
 
+  <!-- HOLZ ÖLEN -->
   <section id="holz-oelen">
-    <h2>Holz ölen</h2>
-    <p>Inhalt …</p>
+    <h2>Holz richtig ölen – Schritt für Schritt</h2>
+    <p>Holz verliert im Laufe der Zeit Feuchtigkeit und wirkt dann trocken, stumpf oder fleckig. 
+       Durch das richtige Öl erhält die Oberfläche neuen Schutz, wird widerstandsfähiger und 
+       gewinnt ihre natürliche Maserung zurück.</p>
+
+    <h3>Wann sollte man Holz ölen?</h3>
+    <ul>
+      <li>Wenn die Oberfläche trocken, matt oder rau wirkt</li>
+      <li>Wenn Wasser nicht mehr abperlt</li>
+      <li>Nach dem Schleifen oder Auffrischen</li>
+      <li>Bei neuen, unbehandelten Holzmöbeln</li>
+    </ul>
+
+    <h3>Die wichtigsten Schritte</h3>
+
+    <div class="card-grid">
+      <div class="card"><h3>1. Oberfläche reinigen</h3><p>Staub, Fett und alte Rückstände entfernen.</p></div>
+      <div class="card"><h3>2. Holz anschleifen</h3><p>Mit 180–240er Körnung in Faserrichtung.</p></div>
+      <div class="card"><h3>3. Öl dünn auftragen</h3><p>Mit Tuch oder Pinsel einarbeiten.</p></div>
+      <div class="card"><h3>4. Überschuss abwischen</h3><p>Nach 10–20 Minuten vollständig abnehmen.</p></div>
+      <div class="card"><h3>5. Trocknen lassen</h3><p>12–24 Stunden ruhen lassen.</p></div>
+    </div>
+
+    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
   </section>
 
-  <section id="produkte">
-    <h2>Produkte</h2>
-    <p>Inhalt …</p>
+  <!-- PRODUKTE -->
+  <section id="produkte-vergleich">
+    <h2>Die besten Holzöle für natürliche Holzpflege</h2>
+    <p>Je nach Holzart und gewünschtem Ergebnis eignen sich unterschiedliche Öle.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Leinöl</h3>
+        <p>Natürlich, tief eindringend und ideal für unbehandelte Hölzer.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+
+      <div class="card">
+        <h3>Hartwachsöl</h3>
+        <p>Sehr robust, ideal für Tische & Arbeitsplatten.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+
+      <div class="card">
+        <h3>Danish Oil</h3>
+        <p>Einfach aufzutragen, schnell trocknend.</p>
+        <a href="#" class="btn">Zu Amazon</a>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
+      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
+    </p>
   </section>
 
-  <section id="fehler">
-    <h2>Fehler vermeiden</h2>
-    <p>Inhalt …</p>
+  <!-- FEHLER -->
+  <section id="fehler-vermeiden">
+    <h2>Die 7 größten Holzpflege‑Fehler</h2>
+
+    <div class="card-grid">
+      <div class="card"><h3>1. Zu viel Öl</h3><p>Dicke Schichten trocknen schlecht.</p></div>
+      <div class="card"><h3>2. Ohne Reinigung</h3><p>Schmutz verhindert gleichmäßiges Einziehen.</p></div>
+      <div class="card"><h3>3. Falsche Körnung</h3><p>Optimal: 180–240.</p></div>
+      <div class="card"><h3>4. Kreisendes Schleifen</h3><p>Immer in Faserrichtung.</p></div>
+      <div class="card"><h3>5. Öl nicht abwischen</h3><p>Überschuss führt zu klebrigen Stellen.</p></div>
+      <div class="card"><h3>6. Zu kurze Trocknung</h3><p>Mind. 12–24 Stunden.</p></div>
+      <div class="card"><h3>7. Falsches Öl</h3><p>Je nach Holzart wählen.</p></div>
+    </div>
   </section>
 
-  <section id="flecken">
-    <h2>Flecken entfernen</h2>
-    <p>Inhalt …</p>
+  <!-- FLECKEN -->
+  <section id="flecken-entfernen">
+    <h2>Flecken entfernen – Wasser, Fett & Kratzer</h2>
+
+    <div class="card-grid">
+      <div class="card"><h3>Helle Wasserflecken</h3><p>Mit Wärme (Tuch + Bügeleisen).</p></div>
+      <div class="card"><h3>Dunkle Wasserflecken</h3><p>Leicht anschleifen + nachölen.</p></div>
+      <div class="card"><h3>Fettflecken</h3><p>Backpulver oder Stärke einwirken lassen.</p></div>
+      <div class="card"><h3>Kratzer</h3><p>Mit Öl oder Wachs auspolieren.</p></div>
+    </div>
   </section>
 
+  <!-- OUTDOOR -->
   <section id="outdoor">
-    <h2>Outdoor</h2>
-    <p>Inhalt …</p>
+    <h2>Outdoor Holzpflege</h2>
+
+    <div class="card-grid">
+      <div class="card"><h3>1. Reinigen</h3><p>Algen & Schmutz entfernen.</p></div>
+      <div class="card"><h3>2. Entgrauen</h3><p>Farbe auffrischen.</p></div>
+      <div class="card"><h3>3. Outdoor‑Öl</h3><p>Mit UV‑Schutz.</p></div>
+      <div class="card"><h3>4. Regelmäßig ölen</h3><p>1–2× pro Jahr.</p></div>
+    </div>
   </section>
 
+  <!-- FAQ -->
   <section id="faq">
-    <h2>FAQ</h2>
-    <p>Inhalt …</p>
+    <h2>Häufige Fragen</h2>
+
+    <h3>Wie oft ölen?</h3>
+    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro Saison.</p>
+
+    <h3>Welches Öl?</h3>
+    <p>Innen: Leinöl, Danish Oil, Hartwachsöl. Außen: Terrassen‑/Outdoor‑Öl.</p>
+
+    <h3>Wasserflecken?</h3>
+    <p>Helle: Wärme. Dunkle: leicht schleifen + nachölen.</p>
   </section>
 
 </main>
 
 <script>
   const headerTop = document.getElementById('headerTop');
-  const headerSpacer = document.getElementById('headerSpacer');
-
   let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
@@ -177,10 +474,8 @@
 
     if (currentScroll > lastScroll && currentScroll > 40) {
       headerTop.classList.add('hide');
-      headerSpacer.classList.add('shrink');
     } else {
       headerTop.classList.remove('hide');
-      headerSpacer.classList.remove('shrink');
     }
 
     lastScroll = currentScroll;
