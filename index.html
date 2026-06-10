@@ -2,31 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512.png">
-
   <title>Holzpflege‑Guide – Holzmöbel ölen, reinigen & pflegen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Holzpflege‑Guide: Schritt‑für‑Schritt Anleitungen zum Holz ölen, reinigen und auffrischen. Tipps für Indoor & Outdoor Holzmöbel – natürlich, einfach und verständlich.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Holzpflege-Guide",
-    "url": "https://holzpflege-guide.pages.dev",
-    'description': "Anleitungen zum Holz ölen, reinigen und pflegen.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Holzpflege-Guide"
-    }
-  }
-  </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
@@ -38,18 +16,13 @@
       --forest: #2F4F4F;
       --petrol: #0A6F6A;
       --white: #FFFFFF;
-
       --shadow-light: rgba(255,255,255,0.7);
       --shadow-dark: rgba(0,0,0,0.12);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #F8F3EA 0, #F4EFE6 40%, #EDE3D4 100%);
+      background: var(--beige-light);
       font-family: 'Inter', sans-serif;
       color: #2F2F2F;
       line-height: 1.75;
@@ -57,15 +30,13 @@
 
     /* HEADER */
     header {
-      background: linear-gradient(135deg, var(--beige-dark), #F7F0E4);
+      background: var(--beige-dark);
       padding: 2.5rem 1.5rem;
       text-align: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(10px);
     }
 
     .header-inner {
@@ -91,7 +62,6 @@
       font-size: 2.4rem;
       margin: 0;
       color: var(--forest);
-      letter-spacing: 0.4px;
     }
 
     header p {
@@ -101,10 +71,6 @@
     }
 
     /* NAVIGATION */
-    nav {
-      background: transparent;
-    }
-
     nav ul {
       list-style: none;
       margin: 0.8rem auto 0;
@@ -134,16 +100,6 @@
       background: var(--petrol);
       color: var(--white);
       transform: translateY(-1px);
-      box-shadow:
-        4px 4px 10px rgba(0,0,0,0.16),
-        -4px -4px 10px rgba(255,255,255,0.9);
-    }
-
-    /* MAIN */
-    main {
-      max-width: 1000px;
-      margin: 3rem auto 4rem;
-      padding: 0 1.5rem;
     }
 
     /* HERO */
@@ -153,66 +109,31 @@
       background-position: center;
       padding: 6rem 1.5rem;
       border-radius: 24px;
-      margin: 0 auto 3.5rem auto;
+      margin: 2rem auto 3.5rem auto;
       max-width: 1000px;
       color: #fff;
       text-align: center;
       animation: fadeIn 1.1s ease;
-      box-shadow:
-        14px 14px 32px rgba(0,0,0,0.28),
-        -10px -10px 26px rgba(255,255,255,0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.18), transparent 55%);
-      pointer-events: none;
     }
 
     .hero-inner {
-      position: relative;
       background: rgba(0,0,0,0.45);
       padding: 2.8rem 2.2rem;
       border-radius: 18px;
       backdrop-filter: blur(6px);
       max-width: 640px;
       margin: 0 auto;
-      box-shadow:
-        8px 8px 20px rgba(0,0,0,0.35),
-        -6px -6px 18px rgba(255,255,255,0.18);
     }
 
     .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
       margin: 0 0 1.2rem 0;
-      letter-spacing: 0.4px;
     }
 
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 2rem;
-    }
-
-    /* HEADINGS */
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.3rem;
-      margin: 0 0 1.4rem 0;
-      color: var(--forest);
-      letter-spacing: 0.3px;
-    }
-
-    h3 {
-      margin-top: 2.2rem;
-      margin-bottom: 0.8rem;
-      color: var(--petrol);
-      font-size: 1.28rem;
-      font-weight: 600;
     }
 
     /* SECTIONS */
@@ -225,10 +146,6 @@
         12px 12px 28px rgba(0,0,0,0.08),
         -10px -10px 26px rgba(255,255,255,0.7);
       animation: fadeInUp 0.8s ease;
-    }
-
-    section p {
-      margin: 0.4rem 0 0.8rem;
     }
 
     /* BUTTONS */
@@ -244,20 +161,15 @@
       transition: 0.25s;
       margin-top: 1.6rem;
       margin-bottom: 0.6rem;
-      box-shadow:
-        0 4px 12px rgba(0,0,0,0.18),
-        0 0 0 1px rgba(255,255,255,0.4) inset;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
     }
 
     .btn:hover {
       background: var(--forest);
       transform: translateY(-3px);
-      box-shadow:
-        0 7px 20px rgba(0,0,0,0.26),
-        0 0 0 1px rgba(255,255,255,0.6) inset;
     }
 
-    /* CARD GRID */
+    /* CARDS */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -273,137 +185,67 @@
         8px 8px 18px var(--shadow-dark),
         -8px -8px 18px var(--shadow-light);
       transition: 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(166,124,82,0.08), transparent 55%);
-      opacity: 0;
-      transition: 0.3s ease;
-      pointer-events: none;
-    }
-
-    .card:hover::before {
-      opacity: 1;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow:
-        12px 12px 28px rgba(0,0,0,0.18),
-        -12px -12px 28px rgba(255,255,255,0.85);
     }
 
-    .card p {
-      margin-bottom: 1.2rem;
-    }
-
-    /* LISTS */
-    ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-
-    li {
-      margin-bottom: 0.3rem;
-    }
-
-    /* MICRO-INTERACTIONS */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2.5rem 1.5rem 3rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    footer .footer-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1.8rem 1.6rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.9);
-      box-shadow:
-        8px 8px 18px rgba(0,0,0,0.06),
-        -8px -8px 18px rgba(255,255,255,0.9);
-    }
-
-    footer nav {
-      margin-top: 0.8rem;
-    }
-
-    footer nav ul {
-      padding: 0;
-      gap: 0.4rem;
-    }
-
-    footer nav a {
-      font-size: 0.85rem;
-      box-shadow: none;
-      background: transparent;
-      padding: 0.2rem 0.6rem;
-    }
-
-    footer nav a:hover {
-      background: var(--petrol);
-      color: var(--white);
-      box-shadow: none;
-    }
-
-    /* MOBILE */
+    /* MOBILE HEADER FIX */
     @media (max-width: 600px) {
+
       header {
-        padding: 2rem 1rem 1.6rem;
+        padding: 0.9rem 0.8rem 0.6rem;
+      }
+
+      .header-inner {
+        gap: 0.5rem;
+      }
+
+      header img {
+        height: 40px;
       }
 
       header h1 {
-        font-size: 2rem;
+        font-size: 1.38rem;
+        line-height: 1.15;
+      }
+
+      header p {
+        font-size: 0.78rem;
+        margin-top: 0.1rem;
       }
 
       nav ul {
-        gap: 0.4rem;
+        gap: 0.25rem;
+        padding: 0.25rem 0.2rem;
+      }
+
+      nav a {
+        padding: 0.26rem 0.55rem;
+        font-size: 0.78rem;
       }
 
       .hero {
-        padding: 4.2rem 1.2rem;
-        border-radius: 20px;
+        padding: 3.6rem 1.2rem;
+        margin-top: 1.4rem;
       }
 
       .hero-inner {
-        padding: 2.1rem 1.6rem;
+        padding: 1.8rem 1.4rem;
       }
 
       .hero h2 {
-        font-size: 2.1rem;
-      }
-
-      main {
-        margin-top: 2.4rem;
+        font-size: 1.9rem;
       }
 
       section {
-        padding: 2.2rem 1.6rem;
-        margin-bottom: 3rem;
-        border-radius: 18px;
+        padding: 2rem 1.4rem;
+        margin-bottom: 2.6rem;
       }
 
       h2 {
-        font-size: 1.9rem;
+        font-size: 1.85rem;
       }
 
       .btn {
@@ -412,8 +254,18 @@
       }
 
       .card {
-        padding: 1.6rem;
+        padding: 1.4rem;
       }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -428,6 +280,7 @@
       <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
     </div>
   </div>
+
   <nav>
     <ul>
       <li><a href="#start">Startseite</a></li>
@@ -443,6 +296,7 @@
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <h2>Holzmöbel pflegen – natürlich & einfach</h2>
@@ -451,14 +305,12 @@
     </div>
   </section>
 
+  <!-- START -->
   <section id="start">
     <h2>Holzmöbel pflegen – einfach & natürlich</h2>
     <p>Holz ist langlebig, schön und natürlich – aber nur, wenn es richtig gepflegt wird. 
        Der Holzpflege‑Guide zeigt dir Schritt für Schritt, wie du deine Möbel schützt, reinigst und ölst – 
-       ohne Vorwissen und ohne teure Spezialprodukte. Lerne, wie du 
-       <a href="#holz-oelen">Holz richtig ölst</a>, 
-       <a href="#flecken-entfernen">Flecken sicher entfernst</a> 
-       und <a href="#fehler-vermeiden">typische Holzpflege‑Fehler vermeidest</a>.</p>
+       ohne Vorwissen und ohne teure Spezialprodukte.</p>
 
     <h3>Beliebte Anleitungen</h3>
 
@@ -483,81 +335,55 @@
     </div>
   </section>
 
+  <!-- HOLZ ÖLEN -->
   <section id="holz-oelen">
     <h2>Holz richtig ölen – Schritt für Schritt</h2>
     <p>Holz verliert im Laufe der Zeit Feuchtigkeit und wirkt dann trocken, stumpf oder fleckig. 
        Durch das richtige Öl erhält die Oberfläche neuen Schutz, wird widerstandsfähiger und 
-       gewinnt ihre natürliche Maserung zurück. Mit einer sauberen Vorbereitung und der passenden 
-       Technik erzielst du langlebige, hochwertige Ergebnisse.</p>
+       gewinnt ihre natürliche Maserung zurück.</p>
 
     <h3>Wann sollte man Holz ölen?</h3>
     <ul>
       <li>Wenn die Oberfläche trocken, matt oder rau wirkt</li>
-      <li>Wenn Wasser nicht mehr abperlt und sofort einzieht</li>
-      <li>Nach dem Schleifen oder Auffrischen einer alten Oberfläche</li>
-      <li>Bei neuen, unbehandelten oder offenporigen Holzmöbeln</li>
+      <li>Wenn Wasser nicht mehr abperlt</li>
+      <li>Nach dem Schleifen oder Auffrischen</li>
+      <li>Bei neuen, unbehandelten Holzmöbeln</li>
     </ul>
 
     <h3>Die wichtigsten Schritte</h3>
+
     <div class="card-grid">
-      <div class="card">
-        <h3>1. Oberfläche reinigen</h3>
-        <p>Staub, Fett und alte Rückstände gründlich entfernen. Nur eine saubere Oberfläche 
-           nimmt das Öl gleichmäßig auf und verhindert Fleckenbildung.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Holz leicht anschleifen</h3>
-        <p>Schleife das Holz mit 180–240er Körnung leicht an, damit die Oberfläche glatter wird 
-           und das Öl gleichmäßig einziehen kann. Immer in Faserrichtung arbeiten.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Öl dünn auftragen</h3>
-        <p>Das Öl mit einem fusselfreien Tuch oder Pinsel in Faserrichtung einarbeiten. 
-           Eine dünne Schicht reicht völlig aus – zu viel Öl führt zu klebrigen Stellen.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. Überschuss abwischen</h3>
-        <p>Nach 10–20 Minuten den nicht eingezogenen Überschuss vollständig abnehmen. 
-           So bleibt die Oberfläche glatt und trocknet ohne Rückstände.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Trocknen lassen</h3>
-        <p>Die geölte Fläche 12–24 Stunden ruhen lassen. Für stark beanspruchte Möbel 
-           empfiehlt sich eine zweite dünne Schicht nach der Trocknung.</p>
-      </div>
+      <div class="card"><h3>1. Oberfläche reinigen</h3><p>Staub, Fett und alte Rückstände entfernen.</p></div>
+      <div class="card"><h3>2. Holz anschleifen</h3><p>Mit 180–240er Körnung in Faserrichtung.</p></div>
+      <div class="card"><h3>3. Öl dünn auftragen</h3><p>Mit Tuch oder Pinsel einarbeiten.</p></div>
+      <div class="card"><h3>4. Überschuss abwischen</h3><p>Nach 10–20 Minuten vollständig abnehmen.</p></div>
+      <div class="card"><h3>5. Trocknen lassen</h3><p>12–24 Stunden ruhen lassen.</p></div>
     </div>
 
     <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
   </section>
 
+  <!-- PRODUKTE -->
   <section id="produkte-vergleich">
     <h2>Die besten Holzöle für natürliche Holzpflege</h2>
-    <p>Je nach Holzart und gewünschtem Ergebnis eignen sich unterschiedliche Öle. 
-       Hier findest du eine klare Übersicht über die beliebtesten Varianten und ihre Vorteile.</p>
+    <p>Je nach Holzart und gewünschtem Ergebnis eignen sich unterschiedliche Öle.</p>
 
     <div class="card-grid">
       <div class="card">
         <h3>Leinöl</h3>
-        <p>Natürlich, tief eindringend und ideal für unbehandelte Hölzer. 
-           Betont die Maserung und sorgt für eine warme, matte Oberfläche.</p>
+        <p>Natürlich, tief eindringend und ideal für unbehandelte Hölzer.</p>
         <a href="#" class="btn">Zu Amazon</a>
       </div>
 
       <div class="card">
         <h3>Hartwachsöl</h3>
-        <p>Kombiniert Öl und Wachs für eine besonders robuste Oberfläche. 
-           Perfekt für Tische, Küchenarbeitsplatten und stark genutzte Möbel.</p>
+        <p>Sehr robust, ideal für Tische & Arbeitsplatten.</p>
         <a href="#" class="btn">Zu Amazon</a>
       </div>
 
       <div class="card">
         <h3>Danish Oil</h3>
-        <p>Schnell trocknend, leicht aufzutragen und ideal für Anfänger. 
-           Sorgt für eine seidenmatte, widerstandsfähige Oberfläche.</p>
+        <p>Einfach aufzutragen, schnell trocknend.</p>
         <a href="#" class="btn">Zu Amazon</a>
       </div>
     </div>
@@ -567,172 +393,57 @@
     </p>
   </section>
 
+  <!-- FEHLER -->
   <section id="fehler-vermeiden">
-    <h2>Die 7 größten Holzpflege‑Fehler – und wie du sie vermeidest</h2>
-    <p>Viele Schäden an Holzmöbeln entstehen nicht durch Abnutzung, sondern durch falsche Pflege. 
-       Mit diesen typischen Fehlern bist du nicht allein – und mit ein paar einfachen Regeln 
-       kannst du sie dauerhaft vermeiden.</p>
+    <h2>Die 7 größten Holzpflege‑Fehler</h2>
 
     <div class="card-grid">
-      <div class="card">
-        <h3>1. Zu viel Öl auftragen</h3>
-        <p>Ein häufiger Fehler: dicke Ölschichten. Sie trocknen schlecht, kleben und ziehen Staub an. 
-           Besser: immer dünn auftragen und Überschuss nach 10–20 Minuten abwischen.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Ohne Reinigung ölen</h3>
-        <p>Staub, Fett und alte Rückstände verhindern, dass das Öl einzieht. 
-           Eine gründliche Reinigung ist Pflicht, bevor du mit dem Ölen beginnst.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Falsche Körnung beim Schleifen</h3>
-        <p>Zu grobes Schleifpapier hinterlässt sichtbare Spuren, zu feines verschließt die Poren. 
-           Optimal sind 180–240er Körnung für eine glatte, aufnahmefähige Oberfläche.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. In kreisenden Bewegungen schleifen</h3>
-        <p>Schleife immer in Faserrichtung. Kreisbewegungen erzeugen matte Stellen und 
-           unruhige Oberflächen, die später sichtbar bleiben.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Öl nicht vollständig abwischen</h3>
-        <p>Wenn überschüssiges Öl auf der Oberfläche bleibt, entstehen klebrige, fleckige Stellen. 
-           Alles, was nicht einzieht, muss abgenommen werden.</p>
-      </div>
-
-      <div class="card">
-        <h3>6. Zu kurze Trocknungszeiten</h3>
-        <p>Holz braucht Zeit. Wird zu früh weitergearbeitet, kann die Oberfläche stumpf oder fleckig werden. 
-           Mindestens 12–24 Stunden trocknen lassen.</p>
-      </div>
-
-      <div class="card">
-        <h3>7. Ungeeignete Produkte verwenden</h3>
-        <p>Nicht jedes Öl passt zu jedem Holz. Naturöle, Hartwachsöle und Danish Oil haben unterschiedliche Eigenschaften. 
-           Wähle das Öl passend zur Nutzung und Holzart.</p>
-      </div>
+      <div class="card"><h3>1. Zu viel Öl</h3><p>Dicke Schichten trocknen schlecht.</p></div>
+      <div class="card"><h3>2. Ohne Reinigung</h3><p>Schmutz verhindert gleichmäßiges Einziehen.</p></div>
+      <div class="card"><h3>3. Falsche Körnung</h3><p>Optimal: 180–240.</p></div>
+      <div class="card"><h3>4. Kreisendes Schleifen</h3><p>Immer in Faserrichtung.</p></div>
+      <div class="card"><h3>5. Öl nicht abwischen</h3><p>Überschuss führt zu klebrigen Stellen.</p></div>
+      <div class="card"><h3>6. Zu kurze Trocknung</h3><p>Mind. 12–24 Stunden.</p></div>
+      <div class="card"><h3>7. Falsches Öl</h3><p>Je nach Holzart wählen.</p></div>
     </div>
-
-    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
   </section>
 
+  <!-- FLECKEN -->
   <section id="flecken-entfernen">
-    <h2>Flecken entfernen – Wasser, Fett & Kratzer richtig behandeln</h2>
-    <p>Holz ist ein natürliches Material und reagiert empfindlich auf Feuchtigkeit, Hitze und Fett. 
-       Viele Flecken lassen sich jedoch mit einfachen Methoden entfernen – ganz ohne aggressive Chemie. 
-       Hier findest du die häufigsten Probleme und die passenden Lösungen.</p>
+    <h2>Flecken entfernen – Wasser, Fett & Kratzer</h2>
 
     <div class="card-grid">
-      <div class="card">
-        <h3>Wasserflecken (hell)</h3>
-        <p>Helle Wasserflecken entstehen, wenn Feuchtigkeit in die obere Schicht eindringt. 
-           Lege ein Baumwolltuch auf die Stelle und fahre mit einem warmen Bügeleisen kurz darüber. 
-           Die Wärme zieht die Feuchtigkeit heraus.</p>
-      </div>
-
-      <div class="card">
-        <h3>Wasserflecken (dunkel)</h3>
-        <p>Dunkle Flecken sitzen tiefer im Holz. Hier hilft meist nur leichtes Anschleifen 
-           (180–240er Körnung) und anschließendes Nachölen. Bei sehr tiefen Flecken: 
-           Oxalsäure als Holzaufheller verwenden.</p>
-      </div>
-
-      <div class="card">
-        <h3>Fettflecken</h3>
-        <p>Fett zieht schnell ein. Streue Backpulver oder Speisestärke auf die Stelle und 
-           lasse es mehrere Stunden einwirken. Das Pulver zieht das Fett aus dem Holz. 
-           Danach vorsichtig abwischen und ggf. nachölen.</p>
-      </div>
-
-      <div class="card">
-        <h3>Kratzer</h3>
-        <p>Feine Kratzer lassen sich oft mit etwas Öl oder Möbelwachs auspolieren. 
-           Bei tieferen Kratzern hilft leichtes Anschleifen und eine dünne Schicht Öl 
-           oder Hartwachsöl.</p>
-      </div>
-
-      <div class="card">
-        <h3>Ringe von Gläsern</h3>
-        <p>Glasränder entstehen durch Feuchtigkeit + Druck. Reibe die Stelle mit einer 
-           Mischung aus Öl und Salz ein oder nutze eine Politur aus Natron und Wasser. 
-           Danach die Oberfläche nachpflegen.</p>
-      </div>
-
-      <div class="card">
-        <h3>Hitze- oder Brandflecken</h3>
-        <p>Leichte Brandspuren können vorsichtig ausgeschliffen werden. 
-           Bei dunklen, tiefen Stellen ist oft eine komplette Auffrischung der Oberfläche nötig.</p>
-      </div>
+      <div class="card"><h3>Helle Wasserflecken</h3><p>Mit Wärme (Tuch + Bügeleisen).</p></div>
+      <div class="card"><h3>Dunkle Wasserflecken</h3><p>Leicht anschleifen + nachölen.</p></div>
+      <div class="card"><h3>Fettflecken</h3><p>Backpulver oder Stärke einwirken lassen.</p></div>
+      <div class="card"><h3>Kratzer</h3><p>Mit Öl oder Wachs auspolieren.</p></div>
     </div>
-
-    <a href="#holz-oelen" class="btn">Oberfläche nachbehandeln</a>
   </section>
 
+  <!-- OUTDOOR -->
   <section id="outdoor">
-    <h2>Outdoor Holzpflege – Gartenmöbel richtig schützen</h2>
-    <p>Holz im Außenbereich ist Sonne, Regen, Temperaturschwankungen und Feuchtigkeit ausgesetzt. 
-       Ohne regelmäßige Pflege verliert es schnell Farbe, wird rau oder bekommt Risse. 
-       Mit der richtigen Behandlung bleiben Gartenmöbel viele Jahre schön und wetterfest.</p>
+    <h2>Outdoor Holzpflege</h2>
 
     <div class="card-grid">
-      <div class="card">
-        <h3>1. Reinigung vor jeder Behandlung</h3>
-        <p>Algen, Schmutz und Grauschleier entfernen. Am besten mit einer weichen Bürste 
-           und einem milden Holzreiniger. Hochdruckreiniger vermeiden – sie beschädigen die Fasern.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Vergrautes Holz auffrischen</h3>
-        <p>UV‑Strahlung lässt Holz vergrauen. Mit einem Entgrauer oder leichtem Anschliff 
-           erhält das Holz seine natürliche Farbe zurück. Danach unbedingt nachölen.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Wetterfestes Öl verwenden</h3>
-        <p>Für draußen eignen sich spezielle Outdoor‑ oder Terrassenöle. 
-           Sie enthalten UV‑Schutz und dringen tiefer ein als normale Möbelöle.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. Öl regelmäßig erneuern</h3>
-        <p>Outdoor‑Holz sollte je nach Witterung 1–2 Mal pro Jahr nachgeölt werden. 
-           Besonders nach dem Winter lohnt sich eine Auffrischung.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Möbel vor Nässe schützen</h3>
-        <p>Stauende Feuchtigkeit vermeiden: Möbel leicht erhöht stellen, 
-           Abstand zum Boden halten und bei Dauerregen abdecken.</p>
-      </div>
-
-      <div class="card">
-        <h3>6. Richtige Lagerung im Winter</h3>
-        <p>Gartenmöbel trocken und luftig lagern. Nicht in Folie einpacken – 
-           darunter sammelt sich Feuchtigkeit und fördert Schimmel.</p>
-      </div>
+      <div class="card"><h3>1. Reinigen</h3><p>Algen & Schmutz entfernen.</p></div>
+      <div class="card"><h3>2. Entgrauen</h3><p>Farbe auffrischen.</p></div>
+      <div class="card"><h3>3. Outdoor‑Öl</h3><p>Mit UV‑Schutz.</p></div>
+      <div class="card"><h3>4. Regelmäßig ölen</h3><p>1–2× pro Jahr.</p></div>
     </div>
-
-    <a href="#produkte-vergleich" class="btn">Geeignete Outdoor‑Öle ansehen</a>
   </section>
 
+  <!-- FAQ -->
   <section id="faq">
-    <h2>Häufige Fragen zur Holzpflege</h2>
+    <h2>Häufige Fragen</h2>
 
-    <h3>Wie oft sollte man Holzmöbel ölen?</h3>
-    <p>Indoor‑Möbel sollten in der Regel alle 1–2 Jahre nachgeölt werden. 
-       Outdoor‑Holz je nach Witterung 1–2 Mal pro Saison.</p>
+    <h3>Wie oft ölen?</h3>
+    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro Saison.</p>
 
-    <h3>Welches Öl eignet sich für Holzmöbel?</h3>
-    <p>Für den Innenbereich eignen sich Leinöl, Danish Oil oder Hartwachsöl. 
-       Für den Außenbereich sind spezielle Terrassen‑ oder Outdoor‑Öle mit UV‑Schutz ideal.</p>
+    <h3>Welches Öl?</h3>
+    <p>Innen: Leinöl, Danish Oil, Hartwachsöl. Außen: Terrassen‑/Outdoor‑Öl.</p>
 
-    <h3>Wie entferne ich Wasserflecken aus Holz?</h3>
-    <p>Helle Wasserflecken lassen sich oft mit Wärme (Baumwolltuch + Bügeleisen) entfernen. 
-       Dunkle Flecken erfordern meist leichtes Anschleifen und anschließendes Nachölen.</p>
+    <h3>Wasserflecken?</h3>
+    <p>Helle: Wärme. Dunkle: leicht schleifen + nachölen.</p>
   </section>
 
 </main>
