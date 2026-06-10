@@ -13,43 +13,41 @@
       color: #333;
     }
 
-    /* HEADER TOP – scrollt normal weg */
-    header {
+    /* 1) LOGO-BEREICH */
+    .header-logo {
       background: #E8DFD1;
-      padding: 2.5rem 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       border-bottom: 1px solid #ccc;
     }
 
-    .header-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    header img {
+    .header-logo img {
       height: 70px;
       border-radius: 12px;
     }
 
-    header h1 {
+    /* 2) TITEL-BEREICH */
+    .header-title {
+      background: #E8DFD1;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .header-title h1 {
       font-family: "Playfair Display", serif;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       margin: 0;
       color: #2F4F4F;
     }
 
-    header p {
+    .header-title p {
       margin: 0.3rem 0 0;
       color: #555;
     }
 
-    /* NAVIGATION – bleibt sticky */
-    .nav-bar {
+    /* 3) NAVIGATION – bleibt sticky */
+    .header-nav {
       position: sticky;
       top: 0;
       z-index: 100;
@@ -94,19 +92,19 @@
 
 <body>
 
-<!-- HEADER (scrollt weg) -->
-<header>
-  <div class="header-inner">
-    <img src="holzpflege-guide-logo-dark.png" alt="Logo">
-    <div>
-      <h1>Holzpflege‑Guide</h1>
-      <p>Untertitel / Claim</p>
-    </div>
-  </div>
-</header>
+<!-- 1) LOGO -->
+<div class="header-logo">
+  <img src="holzpflege-guide-logo-dark.png" alt="Logo">
+</div>
 
-<!-- NAVIGATION (bleibt sticky) -->
-<div class="nav-bar">
+<!-- 2) TITEL -->
+<div class="header-title">
+  <h1>Holzpflege‑Guide</h1>
+  <p>Untertitel / Claim</p>
+</div>
+
+<!-- 3) NAVIGATION (sticky) -->
+<div class="header-nav">
   <nav>
     <ul>
       <li><a href="#start">Start</a></li>
@@ -120,36 +118,16 @@
   </nav>
 </div>
 
-<!-- HAUPTBEREICH (leer, nur Struktur) -->
+<!-- HAUPTBEREICH -->
 <main>
 
-  <section id="start">
-    <h2>Start</h2>
-  </section>
-
-  <section id="holz-oelen">
-    <h2>Holz ölen</h2>
-  </section>
-
-  <section id="produkte">
-    <h2>Produkte</h2>
-  </section>
-
-  <section id="fehler">
-    <h2>Fehler vermeiden</h2>
-  </section>
-
-  <section id="flecken">
-    <h2>Flecken entfernen</h2>
-  </section>
-
-  <section id="outdoor">
-    <h2>Outdoor</h2>
-  </section>
-
-  <section id="faq">
-    <h2>FAQ</h2>
-  </section>
+  <section id="start"><h2>Start</h2></section>
+  <section id="holz-oelen"><h2>Holz ölen</h2></section>
+  <section id="produkte"><h2>Produkte</h2></section>
+  <section id="fehler"><h2>Fehler vermeiden</h2></section>
+  <section id="flecken"><h2>Flecken entfernen</h2></section>
+  <section id="outdoor"><h2>Outdoor</h2></section>
+  <section id="faq"><h2>FAQ</h2></section>
 
 </main>
 
