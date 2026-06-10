@@ -4,37 +4,24 @@
   <meta charset="UTF-8">
   <title>Holzpflege‑Guide – Holzmöbel ölen, reinigen & pflegen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Holzpflege‑Guide: Schritt‑für‑Schritt Anleitungen zum Holz ölen, reinigen und auffrischen. Tipps für Indoor & Outdoor Holzmöbel – natürlich, einfach und verständlich.">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
-
-    :root {
-      --beige-light: #F4EFE6;
-      --beige-dark: #E8DFD1;
-      --wood-brown: #A67C52;
-      --forest: #2F4F4F;
-      --petrol: #0A6F6A;
-      --white: #FFFFFF;
-    }
-
     body {
       margin: 0;
-      background: var(--beige-light);
-      font-family: 'Inter', sans-serif;
-      color: #2F2F2F;
-      line-height: 1.75;
+      font-family: Arial, sans-serif;
+      background: #F4EFE6;
+      color: #333;
     }
 
     /* HEADER TOP (Logo + Titel) */
     .header-top {
-      background: var(--beige-dark);
-      padding: 2.2rem 1.5rem;
+      background: #E8DFD1;
+      padding: 2rem 1rem;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #ccc;
       transition: transform 0.35s ease, opacity 0.35s ease;
       position: relative;
-      z-index: 30;
+      z-index: 10;
     }
 
     .header-top.hide {
@@ -42,47 +29,19 @@
       opacity: 0;
     }
 
-    .header-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .header-inner img {
-      height: 70px;
-      border-radius: 12px;
-    }
-
-    .header-inner h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin: 0;
-      color: var(--forest);
-    }
-
-    .header-inner p {
-      font-size: 1rem;
-      margin: 0.3rem 0 0;
-      color: #555;
-    }
-
-    /* SPACER verhindert Layout-Sprünge */
+    /* SPACER – übernimmt die Höhe des Header-Top */
     .header-spacer {
-      height: 0px;
+      height: 120px; /* gleiche Höhe wie header-top */
       transition: height 0.35s ease;
     }
 
-    .header-spacer.active {
-      height: 0px; /* bleibt 0, aber existiert für Stabilität */
+    .header-spacer.shrink {
+      height: 0px;
     }
 
-    /* NAVIGATION (sticky) */
+    /* NAVIGATION – bleibt sticky */
     .header-nav {
-      background: var(--beige-dark);
+      background: #E8DFD1;
       position: sticky;
       top: 0;
       z-index: 50;
@@ -92,94 +51,44 @@
 
     nav ul {
       list-style: none;
-      margin: 0.8rem auto 0;
+      margin: 0;
       padding: 0;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 0.6rem;
-      max-width: 1000px;
+      flex-wrap: wrap;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--forest);
-      font-weight: 600;
       padding: 0.45rem 0.9rem;
+      background: white;
       border-radius: 999px;
-      font-size: 0.95rem;
-      background: rgba(255,255,255,0.9);
-      transition: 0.2s;
-    }
-
-    nav a:hover {
-      background: var(--petrol);
-      color: var(--white);
+      font-weight: bold;
+      color: #2F4F4F;
+      font-size: 0.9rem;
     }
 
     /* HERO */
     .hero {
-      background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
-      background-size: cover;
-      background-position: center;
-      padding: 6rem 1.5rem;
-      border-radius: 24px;
-      margin: 2rem auto 3.5rem auto;
       max-width: 1000px;
-      color: #fff;
+      margin: 2rem auto;
+      padding: 4rem 1.5rem;
+      background: #0A6F6A;
+      color: white;
+      border-radius: 20px;
       text-align: center;
-    }
-
-    .hero-inner {
-      background: rgba(0,0,0,0.45);
-      padding: 2.8rem 2.2rem;
-      border-radius: 18px;
-      backdrop-filter: blur(6px);
-      max-width: 640px;
-      margin: 0 auto;
     }
 
     /* SECTIONS */
     section {
-      background: var(--white);
-      padding: 3.2rem;
-      margin-bottom: 4rem;
-      border-radius: 22px;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
     }
 
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      padding: 1rem 1.9rem;
-      background: var(--wood-brown);
-      color: var(--white);
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1.6rem;
-      margin-bottom: 0.6rem;
-    }
-
-    @media (max-width: 600px) {
-      .header-inner img { height: 40px; }
-      .header-inner h1 { font-size: 1.38rem; }
-      .header-inner p { font-size: 0.78rem; }
-
-      nav a {
-        padding: 0.26rem 0.55rem;
-        font-size: 0.78rem;
-      }
-
-      .btn {
-        width: auto;
-        max-width: 90%;
-        display: block;
-        margin: 1rem auto;
-        padding: 0.75rem 1.4rem;
-        font-size: 0.95rem;
-        border-radius: 14px;
-      }
-    }
   </style>
 </head>
 
@@ -189,16 +98,11 @@
 
   <!-- SCROLL-BEREICH -->
   <div class="header-top" id="headerTop">
-    <div class="header-inner">
-      <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
-      <div>
-        <h1>Holzpflege‑Guide</h1>
-        <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
-      </div>
-    </div>
+    <h1>Holzpflege‑Guide</h1>
+    <p>Holzmöbel pflegen – natürlich & langlebig</p>
   </div>
 
-  <!-- SPACER (verhindert Layout-Sprünge) -->
+  <!-- SPACER verhindert Scrollblockade -->
   <div class="header-spacer" id="headerSpacer"></div>
 
   <!-- STICKY NAV -->
@@ -207,9 +111,9 @@
       <ul>
         <li><a href="#start">Startseite</a></li>
         <li><a href="#holz-oelen">Holz ölen</a></li>
-        <li><a href="#produkte-vergleich">Produkte</a></li>
-        <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
-        <li><a href="#flecken-entfernen">Flecken</a></li>
+        <li><a href="#produkte">Produkte</a></li>
+        <li><a href="#fehler">Fehler</a></li>
+        <li><a href="#flecken">Flecken</a></li>
         <li><a href="#outdoor">Outdoor</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -220,17 +124,46 @@
 
 <main>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <h2>Holzmöbel pflegen – natürlich & einfach</h2>
-      <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel.</p>
-      <a href="#holz-oelen" class="btn">Holz ölen Anleitung öffnen</a>
-    </div>
+    <h2>Holzmöbel pflegen – natürlich & einfach</h2>
+    <p>Praktische Anleitungen für langlebige Holzmöbel.</p>
   </section>
 
-  <!-- REST DEINER SEITE (unverändert) -->
-  <!-- ... -->
+  <section id="start">
+    <h2>Start</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="holz-oelen">
+    <h2>Holz ölen</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="produkte">
+    <h2>Produkte</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="fehler">
+    <h2>Fehler vermeiden</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="flecken">
+    <h2>Flecken entfernen</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="outdoor">
+    <h2>Outdoor</h2>
+    <p>Inhalt …</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <p>Inhalt …</p>
+  </section>
+
 </main>
 
 <script>
@@ -244,10 +177,10 @@
 
     if (currentScroll > lastScroll && currentScroll > 40) {
       headerTop.classList.add('hide');
-      headerSpacer.classList.add('active');
+      headerSpacer.classList.add('shrink');
     } else {
       headerTop.classList.remove('hide');
-      headerSpacer.classList.remove('active');
+      headerSpacer.classList.remove('shrink');
     }
 
     lastScroll = currentScroll;
