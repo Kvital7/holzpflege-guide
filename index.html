@@ -1,559 +1,1721 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512.png">
+  <meta charset="UTF-8" />
+  <title>Holzpflege-Guide – Premium Ratgeber für Holzpflege</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Holzpflege-Guide: Praxisnahe Anleitungen, Expertenwissen und Produktempfehlungen für Möbel, Terrassen, Parkett und Holz im Außenbereich." />
 
-  <title>Holzpflege‑Guide – Holzmöbel ölen, reinigen & pflegen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Holzpflege‑Guide: Schritt‑für‑Schritt Anleitungen zum Holz ölen, reinigen und auffrischen. Tipps für Indoor & Outdoor Holzmöbel – natürlich, einfach und verständlich.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Holzpflege-Guide",
-    "url": "https://deinedomain.de",
-    "description": "Anleitungen zum Holz ölen, reinigen und pflegen.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Holzpflege-Guide"
-    }
-  }
-  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap');
+    :root {
+      --walnut: #4B2E1F;
+      --oak: #C89B6D;
+      --forest: #2F5D50;
+      --cream: #FAF8F3;
+      --anthracite: #2A2A2A;
 
-:root {
-  --beige-light: #F4EFE6;
-  --beige-dark: #E8DFD1;
-  --wood-brown: #A67C52;
-  --forest: #2F4F4F;
-  --petrol: #0A6F6A;
-  --white: #FFFFFF;
-}
+      --bg: #FAF8F3;
+      --bg-elevated: #FFFFFF;
+      --text-main: #2A2A2A;
+      --text-muted: #6B6B6B;
+      --border-subtle: #E2DED4;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease-out;
+    }
 
-body {
-  margin: 0;
-  background: var(--beige-light);
-  font-family: 'Inter', sans-serif;
-  color: #2F2F2F;
-  line-height: 1.75;
-}
-    
-/* HEADER */
-header {
-  background: var(--beige-dark);
-  padding: 0.8rem 0.6rem 0.4rem; /* weniger vertikaler Abstand */
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-    
-header img {
-  height: 38px;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
+    [data-theme="dark"] {
+      --bg: #121212;
+      --bg-elevated: #1C1C1C;
+      --text-main: #F5F5F5;
+      --text-muted: #A0A0A0;
+      --border-subtle: #333333;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  line-height: 1.1;
-  margin: 0;
-  margin-bottom: 0.2rem;
-  color: var(--forest);
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-header p {
-  font-size: 0.8rem;
-  margin-top: 0.1rem;
-  color: #444;
-}
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* HERO */
-.hero {
-  background-image: url('https://copilot.microsoft.com/th/id/BCO.8249126a-baaa-47b8-9e8a-5a10c429e8d6.png');
-  background-size: cover;
-  background-position: center;
-  padding: 6rem 1.5rem;
-  border-radius: 8px;
-  margin: 2rem auto 3.5rem auto;
-  max-width: 1000px;
-  color: #fff;
-  text-align: center;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.hero-inner {
-  background: rgba(0,0,0,0.45);
-  padding: 2.5rem;
-  border-radius: 8px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  margin: 0 0 1.2rem 0;
-}
+    .page {
+      min-height: 100vh;
+      background: radial-gradient(circle at top left, rgba(200,155,109,0.18), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(47,93,80,0.18), transparent 55%),
+                  var(--bg);
+    }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(250,248,243,0.96), rgba(250,248,243,0.85));
+    }
 
+    [data-theme="dark"] header {
+      background: linear-gradient(to bottom, rgba(18,18,18,0.96), rgba(18,18,18,0.85));
+    }
 
-/* NAVIGATION */
-nav {
-  background: var(--white);
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-nav a {
-  text-decoration: none;
-  color: var(--forest);
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: 0.2s;
-}
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--walnut), var(--oak));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FAF8F3;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
 
-nav a:hover {
-  background: var(--petrol);
-  color: var(--white);
-}
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-/* MAIN */
-main {
-  max-width: 1000px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
+    .logo-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+    }
 
-section {
-  background: var(--white);
-  padding: 3.2rem;
-  margin-bottom: 3.8rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
 
-/* HEADINGS */
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin: 0 0 1.4rem 0;
-  color: var(--forest);
-}
+    .nav-links {
+      display: none;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
 
-h3 {
-  margin-top: 2.2rem;
-  margin-bottom: 0.8rem;
-  color: var(--petrol);
-  font-size: 1.25rem;
-}
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
 
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 0.9rem 1.6rem;
-  background: var(--wood-brown);
-  color: var(--white);
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: 0.25s;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--oak), var(--forest));
+      transition: width var(--transition-fast);
+    }
 
-  /* NEU: harmonische Abstände */
-  margin-top: 1.6rem;
-  margin-bottom: 0.6rem;
-}
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-.btn:hover {
-  background: var(--forest);
-  transform: translateY(-2px);
-}
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-/* CARD GRID */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.8rem;
-  margin-top: 1.8rem;
-}
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+      background: none;
+      color: var(--text-main);
+    }
 
-.card {
-  background: var(--white);
-  padding: 1.8rem;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-  transition: 0.2s;
-}
+    .btn-primary {
+      background: linear-gradient(135deg, var(--walnut), var(--forest));
+      color: #FAF8F3;
+      box-shadow: 0 12px 30px rgba(75,46,31,0.35);
+      border-color: rgba(0,0,0,0.1);
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(75,46,31,0.45);
+    }
 
-.card p {
-  margin-bottom: 1.2rem;
-}
+    .btn-ghost {
+      border-color: var(--border-subtle);
+      background: rgba(255,255,255,0.4);
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: #666;
-  font-size: 0.9rem;
-}
+    [data-theme="dark"] .btn-ghost {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--oak);
+    }
+
+    .theme-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--forest);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--walnut);
+    }
+
+    [data-theme="dark"] .hero-title {
+      color: #F3E4D4;
+    }
+
+    .hero-sub {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-meta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--oak);
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--bg-elevated);
+      border-radius: 26px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    [data-theme="dark"] .hero-card {
+      border-color: rgba(255,255,255,0.04);
+    }
+
+    .hero-wood-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(120deg, rgba(0,0,0,0.35), rgba(0,0,0,0.1)),
+        url("https://images.pexels.com/photos/129733/pexels-photo-129733.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.1);
+      opacity: 0.9;
+    }
+
+    [data-theme="dark"] .hero-wood-bg {
+      filter: saturate(1.1) brightness(0.8);
+    }
+
+    .hero-card-overlay {
+      position: relative;
+      z-index: 1;
+      color: #FAF8F3;
+    }
+
+    .hero-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.45);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .hero-card-badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(250,248,243,0.6);
+      font-size: 0.78rem;
+    }
+
+    .hero-floating {
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      transform: translateY(-10%);
+      background: var(--bg-elevated);
+      border-radius: 18px;
+      padding: 0.9rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.8rem;
+      max-width: 210px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hero-floating strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 30rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--forest);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .pill-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .pill-nav button {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.9rem;
+      background: rgba(255,255,255,0.7);
+      cursor: pointer;
+      color: var(--text-main);
+      font-size: 0.85rem;
+    }
+
+    [data-theme="dark"] .pill-nav button {
+      background: rgba(0,0,0,0.3);
+    }
+
+    .pill-nav button.active {
+      border-color: var(--oak);
+      background: rgba(200,155,109,0.12);
+      color: var(--walnut);
+    }
+
+    [data-theme="dark"] .pill-nav button.active {
+      color: #F3E4D4;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(200,155,109,0.6);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .card-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    .card-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(200,155,109,0.12);
+      color: var(--walnut);
+    }
+
+    [data-theme="dark"] .chip {
+      color: #F3E4D4;
+    }
+
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .article-media {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ddd;
+      aspect-ratio: 16 / 10;
+    }
+
+    .article-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05)),
+        url("https://images.pexels.com/photos/2450021/pexels-photo-2450021.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      background-size: cover;
+      background-position: center;
+      transition: transform var(--transition-fast);
+    }
+
+    .card:hover .article-media::before {
+      transform: scale(1.03);
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .article-category {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(47,93,80,0.08);
+      color: var(--forest);
+    }
+
+    .article-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .article-time span {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--oak);
+    }
+
+    .article-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .article-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .article-link {
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      color: var(--walnut);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    [data-theme="dark"] .article-link {
+      color: #F3E4D4;
+    }
+
+    .article-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .expert-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .expert-infocards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .infographic-card {
+      background: radial-gradient(circle at top left, rgba(200,155,109,0.18), transparent 55%),
+                  var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+    }
+
+    .infographic-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .infographic-metric {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--walnut);
+      margin: 0.4rem 0;
+    }
+
+    [data-theme="dark"] .infographic-metric {
+      color: #F3E4D4;
+    }
+
+    .infographic-bars {
+      margin-top: 0.6rem;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .bar-track {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--oak), var(--forest));
+    }
+
+    .table-wrapper {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      overflow: hidden;
+    }
+
+    .table-header {
+      padding: 1rem 1.3rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .table-header-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .table-header-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .table thead {
+      background: rgba(200,155,109,0.06);
+    }
+
+    .table th,
+    .table td {
+      padding: 0.7rem 1.3rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .table th {
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(47,93,80,0.08);
+      color: var(--forest);
+    }
+
+    .badge-positive {
+      background: rgba(47,93,80,0.12);
+      color: var(--forest);
+    }
+
+    .badge-neutral {
+      background: rgba(200,155,109,0.12);
+      color: var(--walnut);
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-elevated);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 0.9rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .faq-question span {
+      font-weight: 500;
+    }
+
+    .faq-toggle {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+      padding: 0 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .faq-item.open .faq-answer {
+      padding-bottom: 0.9rem;
+    }
+
+    .newsletter {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(200,155,109,0.18), transparent 55%),
+                  var(--bg-elevated);
+      border-radius: 26px;
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .newsletter-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .newsletter-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+
+    .newsletter-input {
+      min-width: 0;
+      flex: 1 1 220px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.8);
+      color: var(--text-main);
+    }
+
+    [data-theme="dark"] .newsletter-input {
+      background: rgba(0,0,0,0.3);
+    }
+
+    .newsletter-note {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+    }
+
+    .search-box {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .search-box input {
+      width: 100%;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      padding: 0.6rem 2.2rem 0.6rem 0.9rem;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.8);
+      color: var(--text-main);
+    }
+
+    [data-theme="dark"] .search-box input {
+      background: rgba(0,0,0,0.3);
+    }
+
+    .search-box svg {
+      position: absolute;
+      right: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .expert-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .expert-infocards {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-links {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+    }
   </style>
 </head>
+<body data-theme="light">
+  <div class="page">
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <div class="logo">
+            <div class="logo-mark">H</div>
+            <div class="logo-text">
+              <div class="logo-title">Holzpflege-Guide</div>
+              <div class="logo-sub">Ratgeber &amp; Expertenwissen</div>
+            </div>
+          </div>
 
-<body>
+          <div class="nav-links">
+            <a href="#kategorien">Kategorien</a>
+            <a href="#ratgeber">Ratgeber</a>
+            <a href="#experten">Expertenwissen</a>
+            <a href="#produkte">Produkte</a>
+            <a href="#faq">FAQ</a>
+          </div>
 
-<header style="background: var(--beige-dark); padding: 2.5rem 1.5rem; text-align: center; border-bottom: 1px solid #ddd;">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-    <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo" style="height: 80px; margin-top: 12px;">
-    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--forest); margin: 0;">Holzpflege‑Guide</h1>
+          <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Dark Mode umschalten">☾</button>
+            <button class="btn btn-ghost">Newsletter</button>
+            <button class="btn btn-primary">Holzpflege lernen</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Premium Holzpflege-Ratgeber</div>
+            <h1 class="hero-title">Holz richtig pflegen – langlebig, schön und geschützt.</h1>
+            <p class="hero-sub">
+              Praxisnahe Anleitungen, Expertenwissen und Produktempfehlungen für Möbel, Terrassen, Parkett und Holz im Außenbereich.
+              Entwickelt wie ein hochwertiges digitales Magazin – für alle, die Holz lieben.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#ratgeber" class="btn btn-primary">
+                Holzpflege lernen
+                <span>→</span>
+              </a>
+              <a href="#kategorien" class="btn btn-ghost">
+                Ratgeber entdecken
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                500+ Fachartikel
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                Experten-Tipps
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-dot"></span>
+                Schritt-für-Schritt-Anleitungen
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <div class="hero-card">
+              <div class="hero-wood-bg"></div>
+              <div class="hero-card-overlay">
+                <div class="hero-card-tag">
+                  <span style="width:8px;height:8px;border-radius:999px;background:#C89B6D;display:inline-block;"></span>
+                  Premium Holzoberfläche
+                </div>
+                <div class="hero-card-title">Terrassenholz richtig ölen</div>
+                <div class="hero-card-sub">
+                  Schritt-für-Schritt-Anleitung für UV-Schutz, Feuchtigkeitsschutz und eine dauerhaft schöne Oberfläche.
+                </div>
+                <div class="hero-card-meta">
+                  <div>Lesedauer: 8 Min.</div>
+                  <div class="hero-card-badge">Außenbereich · Terrasse</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-floating">
+              <strong>Individuelle Pflegepläne</strong>
+              Erhalten Sie saisonale Empfehlungen für Ihre Holzarten – von Eiche bis Teak – direkt in Ihrem Postfach.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kategorien">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-tag">Kategorien</div>
+              <h2 class="section-title">Holzpflege nach Bereich, Holzart &amp; Produkt</h2>
+              <p class="section-sub">
+                Finden Sie schnell den passenden Ratgeber – ob für den Innenbereich, den Garten oder spezielle Holzarten.
+              </p>
+            </div>
+            <div class="pill-nav">
+              <button class="active">Alle</button>
+              <button>Innenbereich</button>
+              <button>Außenbereich</button>
+              <button>Holzarten</button>
+              <button>Pflegeprodukte</button>
+            </div>
+          </div>
+
+          <div class="grid grid-4">
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-tag">Innenbereich</div>
+                  <div class="card-title">Holz im Wohnraum</div>
+                </div>
+              </div>
+              <p class="card-sub">
+                Pflege für Holzmöbel, Parkett, Treppen und Küchenarbeitsplatten – für ein warmes, langlebiges Zuhause.
+              </p>
+              <div class="card-chip-row">
+                <span class="chip">Holzmöbel</span>
+                <span class="chip">Parkett</span>
+                <span class="chip">Küchenarbeitsplatten</span>
+                <span class="chip">Treppen</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-tag">Außenbereich</div>
+                  <div class="card-title">Holz im Freien</div>
+                </div>
+              </div>
+              <p class="card-sub">
+                Schutz vor UV-Strahlung, Regen und Schmutz für Terrassen, Gartenmöbel, Zäune und Carports.
+              </p>
+              <div class="card-chip-row">
+                <span class="chip">Terrasse</span>
+                <span class="chip">Gartenmöbel</span>
+                <span class="chip">Zäune</span>
+                <span class="chip">Carports</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-tag">Holzarten</div>
+                  <div class="card-title">Die richtige Pflege je Holzart</div>
+                </div>
+              </div>
+              <p class="card-sub">
+                Von Eiche bis Douglasie – erfahren Sie, welche Produkte und Intervalle zu Ihrer Holzart passen.
+              </p>
+              <div class="card-chip-row">
+                <span class="chip">Eiche</span>
+                <span class="chip">Buche</span>
+                <span class="chip">Teak</span>
+                <span class="chip">Lärche</span>
+                <span class="chip">Douglasie</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-tag">Pflegeprodukte</div>
+                  <div class="card-title">Öle, Wachse &amp; mehr</div>
+                </div>
+              </div>
+              <p class="card-sub">
+                Produktvergleiche, Anwendungstipps und Empfehlungen für Öle, Wachse, Lasuren, Lacke und Reiniger.
+              </p>
+              <div class="card-chip-row">
+                <span class="chip">Öle</span>
+                <span class="chip">Wachse</span>
+                <span class="chip">Lasuren</span>
+                <span class="chip">Lacke</span>
+                <span class="chip">Reiniger</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ratgeber">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-tag">Beliebte Ratgeber</div>
+              <h2 class="section-title">Holzpflege wie im Premium-Magazin</h2>
+              <p class="section-sub">
+                Kuratierte Fachartikel mit großen Bildern, klaren Anleitungen und praxisnahen Tipps – optimiert für Lesbarkeit und SEO.
+              </p>
+            </div>
+            <div class="search-box">
+              <input type="search" placeholder="Ratgeber durchsuchen (z. B. „Terrasse ölen“)" aria-label="Ratgeber durchsuchen" />
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6"></circle>
+                <line x1="15.5" y1="15.5" x2="20" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></line>
+              </svg>
+            </div>
+          </div>
+
+          <div class="grid grid-3">
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Terrasse</span>
+                  <span class="article-time">
+                    <span></span>
+                    8 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Terrassenholz richtig ölen</h3>
+                <p class="article-excerpt">
+                  Wie Sie Ihre Terrasse Schritt für Schritt reinigen, vorbereiten und mit dem passenden Öl dauerhaft schützen.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Parkett</span>
+                  <span class="article-time">
+                    <span></span>
+                    6 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Parkett reinigen ohne Schäden</h3>
+                <p class="article-excerpt">
+                  Die wichtigsten Dos &amp; Don’ts bei der Parkettpflege – von Reinigern bis zur richtigen Feuchtigkeit.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Teakholz</span>
+                  <span class="article-time">
+                    <span></span>
+                    7 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Teakholz pflegen wie ein Profi</h3>
+                <p class="article-excerpt">
+                  So behalten Teak-Gartenmöbel ihre edle Optik – inklusive Tipps zu Vergrauung, Öl und Reinigung.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Lasuren &amp; Öle</span>
+                  <span class="article-time">
+                    <span></span>
+                    5 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Lasur oder Öl – was ist besser?</h3>
+                <p class="article-excerpt">
+                  Ein Vergleich der Systeme: Wann Öl sinnvoll ist, wann Lasur Vorteile bietet und wie Sie entscheiden.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Holzschutz</span>
+                  <span class="article-time">
+                    <span></span>
+                    9 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Schimmelprävention bei Holz</h3>
+                <p class="article-excerpt">
+                  Ursachen, Warnsignale und Maßnahmen, um Schimmelbildung auf Holzoberflächen langfristig zu vermeiden.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card article-card">
+              <div class="article-media"></div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-category">Pflegepläne</span>
+                  <span class="article-time">
+                    <span></span>
+                    4 Min. Lesezeit
+                  </span>
+                </div>
+                <h3 class="article-title">Jahresplan für Außenholz</h3>
+                <p class="article-excerpt">
+                  Saisonale Checkliste für Terrasse, Zaun &amp; Gartenmöbel – damit Ihr Holz das ganze Jahr geschützt bleibt.
+                </p>
+                <a href="#" class="article-link">
+                  Zum Ratgeber
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experten">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-tag">Expertenbereich</div>
+              <h2 class="section-title">Wissensplattform für nachhaltige Holzpflege</h2>
+              <p class="section-sub">
+                Vertiefende Inhalte zu Holzschutz, Feuchtigkeit, UV-Strahlung und Schimmelprävention – visualisiert in klaren, modernen Infografiken.
+              </p>
+            </div>
+          </div>
+
+          <div class="expert-grid">
+            <div>
+              <div class="card" style="margin-bottom:1.5rem;">
+                <div class="card-tag">Pflegepläne &amp; Saisonale Empfehlungen</div>
+                <h3 class="card-title" style="margin-top:0.4rem;">Individuelle Pflegepläne für Ihre Holzoberflächen</h3>
+                <p class="card-sub">
+                  Erstellen Sie auf Basis von Holzart, Standort und Nutzung einen Pflegeplan, der zu Ihrem Alltag passt.
+                  Von der jährlichen Terrassenpflege bis zur monatlichen Möbelpflege im Innenraum.
+                </p>
+                <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.1rem;margin-top:0.4rem;">
+                  <li>Innen- und Außenbereich getrennt planbar</li>
+                  <li>Empfehlungen für Öle, Lasuren, Wachse und Reiniger</li>
+                  <li>Saisonale Erinnerungen für kritische Zeiträume</li>
+                </ul>
+              </div>
+
+              <div class="expert-infocards">
+                <div class="infographic-card">
+                  <div class="infographic-title">Holzschutz-Faktoren</div>
+                  <div class="infographic-metric">4 Kernbereiche</div>
+                  <ul style="font-size:0.85rem;color:var(--text-muted);padding-left:1.1rem;">
+                    <li>UV-Schutz</li>
+                    <li>Feuchtigkeitsschutz</li>
+                    <li>Mechanische Belastung</li>
+                    <li>Biologischer Befall</li>
+                  </ul>
+                </div>
+
+                <div class="infographic-card">
+                  <div class="infographic-title">Empfohlene Pflegeintervalle</div>
+                  <div class="infographic-bars">
+                    <div class="bar-row">
+                      <span>Terrassenholz</span>
+                      <div class="bar-track">
+                        <div class="bar-fill" style="width:90%;"></div>
+                      </div>
+                      <span>1×/Jahr</span>
+                    </div>
+                    <div class="bar-row">
+                      <span>Gartenmöbel</span>
+                      <div class="bar-track">
+                        <div class="bar-fill" style="width:70%;"></div>
+                      </div>
+                      <span>1×/Jahr</span>
+                    </div>
+                    <div class="bar-row">
+                      <span>Parkett</span>
+                      <div class="bar-track">
+                        <div class="bar-fill" style="width:50%;"></div>
+                      </div>
+                      <span>alle 2–3 Jahre</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="card">
+              <div class="card-tag">Holzschutz &amp; Prävention</div>
+              <h3 class="card-title" style="margin-top:0.4rem;">Schimmel, UV-Strahlung &amp; Feuchtigkeit verstehen</h3>
+              <p class="card-sub">
+                Lernen Sie, wie Holz auf Umwelteinflüsse reagiert – und wie Sie Schäden frühzeitig erkennen und vermeiden.
+              </p>
+              <ul style="font-size:0.9rem;color:var(--text-muted);padding-left:1.1rem;margin-top:0.4rem;">
+                <li>Schimmelprävention bei hoher Luftfeuchtigkeit</li>
+                <li>UV-Schutz für stark besonnte Flächen</li>
+                <li>Feuchtigkeitsschutz für horizontale Flächen</li>
+                <li>Tipps für kritische Übergangsbereiche (z. B. Terrassentüren)</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="produkte">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-tag">Produkt-Empfehlungen</div>
+              <h2 class="section-title">Vergleichstabellen für Holzöle, Lasuren &amp; Reiniger</h2>
+              <p class="section-sub">
+                Klar strukturierte Vergleiche mit Bewertungen, Vor- und Nachteilen – ideal für Affiliate-Integration und transparente Produktempfehlungen.
+              </p>
+            </div>
+          </div>
+
+          <div class="table-wrapper" style="margin-bottom:1.5rem;">
+            <div class="table-header">
+              <div>
+                <div class="table-header-title">Holzöle im Vergleich</div>
+                <div class="table-header-sub">Für Terrassen, Gartenmöbel und stark beanspruchte Außenflächen.</div>
+              </div>
+              <span class="badge badge-neutral">Beispiel-Tabelle</span>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Produkt</th>
+                  <th>Einsatzbereich</th>
+                  <th>Eigenschaften</th>
+                  <th>Bewertung</th>
+                  <th>Vorteile</th>
+                  <th>Nachteile</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Premium Terrassenöl</td>
+                  <td>Terrasse, Außen</td>
+                  <td>UV-Schutz, wasserabweisend</td>
+                  <td>★★★★★</td>
+                  <td><span class="badge badge-positive">Langlebig</span></td>
+                  <td>Höherer Preis</td>
+                </tr>
+                <tr>
+                  <td>Teak-Öl Classic</td>
+                  <td>Gartenmöbel, Teak</td>
+                  <td>Betont Maserung, leicht zu verarbeiten</td>
+                  <td>★★★★☆</td>
+                  <td><span class="badge badge-positive">Einfache Anwendung</span></td>
+                  <td>Häufigere Auffrischung nötig</td>
+                </tr>
+                <tr>
+                  <td>Innenholz-Öl Matt</td>
+                  <td>Möbel, Innen</td>
+                  <td>Matt, lebensmittelecht</td>
+                  <td>★★★★☆</td>
+                  <td><span class="badge badge-positive">Ideal für Küchen</span></td>
+                  <td>Nur für Innen geeignet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-wrapper">
+            <div class="table-header">
+              <div>
+                <div class="table-header-title">Holzreiniger &amp; Pflege-Sets</div>
+                <div class="table-header-sub">Für die optimale Vorbereitung vor Öl, Lasur oder Lack.</div>
+              </div>
+              <span class="badge badge-neutral">Affiliate-freundliches Layout</span>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Produkt</th>
+                  <th>Typ</th>
+                  <th>Geeignet für</th>
+                  <th>Bewertung</th>
+                  <th>Besonderheit</th>
+                  <th>Vergleich</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Holzreiniger Konzentrat</td>
+                  <td>Reiniger</td>
+                  <td>Terrasse, Gartenmöbel</td>
+                  <td>★★★★☆</td>
+                  <td>Starke Verschmutzungen</td>
+                  <td><a href="#" class="article-link">Vergleichen →</a></td>
+                </tr>
+                <tr>
+                  <td>Pflege-Set Parkett</td>
+                  <td>Set</td>
+                  <td>Parkett, Innen</td>
+                  <td>★★★★★</td>
+                  <td>Reiniger + Pflegeöl</td>
+                  <td><a href="#" class="article-link">Vergleichen →</a></td>
+                </tr>
+                <tr>
+                  <td>Gartenmöbel-Set Teak</td>
+                  <td>Set</td>
+                  <td>Teak-Gartenmöbel</td>
+                  <td>★★★★☆</td>
+                  <td>Reiniger + Teak-Öl</td>
+                  <td><a href="#" class="article-link">Vergleichen →</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-tag">FAQ</div>
+              <h2 class="section-title">Häufige Fragen zur Holzpflege</h2>
+              <p class="section-sub">
+                Kurz und verständlich beantwortet – mit Links zu vertiefenden Ratgebern für alle, die tiefer einsteigen möchten.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq">
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Wie oft sollte Holz geölt werden?</span>
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                Im Außenbereich wird in der Regel eine Auffrischung einmal pro Jahr empfohlen, insbesondere bei stark
+                bewitterten Flächen wie Terrassen. Im Innenbereich hängt das Intervall von Nutzung und Beanspruchung ab –
+                häufig genutzte Flächen wie Esstische oder Arbeitsplatten profitieren von einer Auffrischung alle 1–2 Jahre.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Wann ist eine Lasur sinnvoll?</span>
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                Lasuren sind ideal, wenn Sie Holz im Außenbereich vor UV-Strahlung und Feuchtigkeit schützen möchten und
+                gleichzeitig die Holzstruktur sichtbar bleiben soll. Besonders bei Zäunen, Fassaden oder Carports ist eine
+                hochwertige Lasur oft die beste Wahl.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Kann man altes Holz retten?</span>
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                In vielen Fällen ja. Vergraute oder verschmutzte Oberflächen lassen sich durch Reinigen, Schleifen und
+                anschließende Behandlung mit Öl, Lasur oder Lack deutlich aufwerten. Entscheidend ist, ob das Holz strukturell
+                noch intakt ist und keine tiefgreifenden Schäden wie Fäulnis vorliegen.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Welches Öl eignet sich für Teakholz?</span>
+                <span class="faq-toggle">+</span>
+              </button>
+              <div class="faq-answer">
+                Für Teakholz eignen sich spezielle Teaköle, die auf die dichte Struktur und den hohen Eigenölgehalt des Holzes
+                abgestimmt sind. Sie betonen die natürliche Farbe, schützen vor Vergrauung und lassen sich in der Regel leicht
+                auffrischen, ohne abzuschleifen.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="newsletter">
+        <div class="container">
+          <div class="newsletter">
+            <h2 class="newsletter-title">Erhalten Sie die besten Holzpflege-Tipps direkt per E-Mail.</h2>
+            <p class="newsletter-sub">
+              Exklusive Pflegepläne, saisonale Checklisten und Produktempfehlungen – kompakt und praxisnah, maximal 1–2 E-Mails pro Monat.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Ihre E-Mail-Adresse" required />
+              <button type="submit" class="btn btn-primary">
+                Jetzt anmelden
+              </button>
+            </form>
+            <p class="newsletter-note">
+              Sie können sich jederzeit mit einem Klick wieder abmelden. Keine Weitergabe Ihrer Daten an Dritte.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo">
+              <div class="logo-mark">H</div>
+              <div class="logo-text">
+                <div class="logo-title">Holzpflege-Guide</div>
+                <div class="logo-sub">Wissen · Praxis · Produkte</div>
+              </div>
+            </div>
+            <p style="margin-top:0.8rem;font-size:0.85rem;color:var(--text-muted);max-width:22rem;">
+              Ihr digitales Magazin für nachhaltige Holzpflege – von der ersten Reinigung bis zur langfristigen Schutzbehandlung.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div>
+              <div class="footer-heading">Ratgeber</div>
+              <a href="#ratgeber">Innenbereich</a>
+              <a href="#ratgeber">Außenbereich</a>
+              <a href="#ratgeber">Pflegepläne</a>
+            </div>
+            <div>
+              <div class="footer-heading">Holzarten</div>
+              <a href="#kategorien">Eiche</a>
+              <a href="#kategorien">Teak</a>
+              <a href="#kategorien">Lärche &amp; Douglasie</a>
+            </div>
+            <div>
+              <div class="footer-heading">Service</div>
+              <a href="#produkte">Pflegeprodukte</a>
+              <a href="#newsletter">Newsletter</a>
+              <a href="#">Kontakt</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© <span id="year"></span> Holzpflege-Guide. Alle Rechte vorbehalten.</div>
+          <div style="display:flex;gap:1rem;">
+            <a href="#">Datenschutz</a>
+            <a href="#">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-  <p style="font-size: 1.2rem; margin-top: 0.5rem; color: #444;">Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
-</header>
 
-<nav>
-  <ul>
-    <li><a href="#start">Startseite</a></li>
-    <li><a href="#holz-oelen">Holz ölen</a></li>
-    <li><a href="#produkte-vergleich">Produkte</a></li>
-    <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
-    <li><a href="#flecken-entfernen">Flecken</a></li>
-    <li><a href="#outdoor">Outdoor</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-</nav>
+  <script>
+    const root = document.body;
+    const toggle = document.getElementById("themeToggle");
+    const storedTheme = window.localStorage.getItem("holzTheme");
 
-<main>
+    if (storedTheme === "dark") {
+      root.setAttribute("data-theme", "dark");
+      toggle.textContent = "☼";
+    }
 
-  <section class="hero">
-    <div class="hero-inner">
-      <h2>Holzmöbel pflegen – natürlich & einfach</h2>
-      <p>Praktische Anleitungen, natürliche Pflege und hochwertige Tipps für langlebige Holzmöbel – für Indoor und Outdoor.</p>
-      <a href="#holz-oelen" class="btn">Holz ölen Anleitung öffnen</a>
-    </div>
-  </section>
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      toggle.textContent = next === "dark" ? "☼" : "☾";
+      window.localStorage.setItem("holzTheme", next);
+    });
 
-  <section id="start">
-    <h2>Holzmöbel pflegen – einfach & natürlich</h2>
-    <p>Holz ist langlebig, schön und natürlich – aber nur, wenn es richtig gepflegt wird. 
-       Der Holzpflege‑Guide zeigt dir Schritt für Schritt, wie du deine Möbel schützt, reinigst und ölst – 
-       ohne Vorwissen und ohne teure Spezialprodukte. Lerne, wie du 
-       <a href="#holz-oelen">Holz richtig ölst</a>, 
-       <a href="#flecken-entfernen">Flecken sicher entfernst</a> 
-       und <a href="#fehler-vermeiden">typische Holzpflege‑Fehler vermeidest</a>.</p>
-  
-    <h3>Beliebte Anleitungen</h3>
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const btn = item.querySelector(".faq-question");
+      btn.addEventListener("click", () => {
+        const open = item.classList.contains("open");
+        document.querySelectorAll(".faq-item").forEach((i) => {
+          i.classList.remove("open");
+          const ans = i.querySelector(".faq-answer");
+          if (ans) ans.style.maxHeight = null;
+          const t = i.querySelector(".faq-toggle");
+          if (t) t.textContent = "+";
+        });
+        if (!open) {
+          item.classList.add("open");
+          const answer = item.querySelector(".faq-answer");
+          if (answer) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+          const toggle = item.querySelector(".faq-toggle");
+          if (toggle) toggle.textContent = "–";
+        }
+      });
+    });
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>Holz richtig ölen</h3>
-        <p>Die wichtigste Anleitung für natürliche, langlebige Oberflächen.</p>
-        <a href="#holz-oelen" class="btn">Ansehen</a>
-      </div>
-
-      <div class="card">
-        <h3>Flecken entfernen</h3>
-        <p>Wasserflecken, Fettflecken & Kratzer sicher behandeln.</p>
-        <a href="#flecken-entfernen" class="btn">Ansehen</a>
-      </div>
-
-      <div class="card">
-        <h3>Holzpflege Fehler</h3>
-        <p>Die 7 häufigsten Fehler – und wie du sie vermeidest.</p>
-        <a href="#fehler-vermeiden" class="btn">Ansehen</a>
-      </div>
-    </div>
-  </section>
-  
-  <section id="holz-oelen">
-    <h2>Holz richtig ölen – Schritt für Schritt</h2>
-    <p>Holz verliert im Laufe der Zeit Feuchtigkeit und wirkt dann trocken, stumpf oder fleckig. 
-       Durch das richtige Öl erhält die Oberfläche neuen Schutz, wird widerstandsfähiger und 
-       gewinnt ihre natürliche Maserung zurück. Mit einer sauberen Vorbereitung und der passenden 
-       Technik erzielst du langlebige, hochwertige Ergebnisse.</p>
-
-    <h3>Wann sollte man Holz ölen?</h3>
-    <ul>
-      <li>Wenn die Oberfläche trocken, matt oder rau wirkt</li>
-      <li>Wenn Wasser nicht mehr abperlt und sofort einzieht</li>
-      <li>Nach dem Schleifen oder Auffrischen einer alten Oberfläche</li>
-      <li>Bei neuen, unbehandelten oder offenporigen Holzmöbeln</li>
-    </ul>
-
-    <h3>Die wichtigsten Schritte</h3>
-    <div class="card-grid">
-      <div class="card">
-        <h3>1. Oberfläche reinigen</h3>
-        <p>Staub, Fett und alte Rückstände gründlich entfernen. Nur eine saubere Oberfläche 
-           nimmt das Öl gleichmäßig auf und verhindert Fleckenbildung.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Holz leicht anschleifen</h3>
-        <p>Schleife das Holz mit 180–240er Körnung leicht an, damit die Oberfläche glatter wird 
-           und das Öl gleichmäßig einziehen kann. Immer in Faserrichtung arbeiten.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Öl dünn auftragen</h3>
-        <p>Das Öl mit einem fusselfreien Tuch oder Pinsel in Faserrichtung einarbeiten. 
-           Eine dünne Schicht reicht völlig aus – zu viel Öl führt zu klebrigen Stellen.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. Überschuss abwischen</h3>
-        <p>Nach 10–20 Minuten den nicht eingezogenen Überschuss vollständig abnehmen. 
-           So bleibt die Oberfläche glatt und trocknet ohne Rückstände.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Trocknen lassen</h3>
-        <p>Die geölte Fläche 12–24 Stunden ruhen lassen. Für stark beanspruchte Möbel 
-           empfiehlt sich eine zweite dünne Schicht nach der Trocknung.</p>
-      </div>
-    </div>
-
-    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
-  </section>
-
-  <section id="produkte-vergleich">
-    <h2>Die besten Holzöle für natürliche Holzpflege</h2>
-    <p>Je nach Holzart und gewünschtem Ergebnis eignen sich unterschiedliche Öle. 
-       Hier findest du eine klare Übersicht über die beliebtesten Varianten und ihre Vorteile.</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Leinöl</h3>
-        <p>Natürlich, tief eindringend und ideal für unbehandelte Hölzer. 
-           Betont die Maserung und sorgt für eine warme, matte Oberfläche.</p>
-        <a href="#" class="btn">Zu Amazon</a>
-      </div>
-
-      <div class="card">
-        <h3>Hartwachsöl</h3>
-        <p>Kombiniert Öl und Wachs für eine besonders robuste Oberfläche. 
-           Perfekt für Tische, Küchenarbeitsplatten und stark genutzte Möbel.</p>
-        <a href="#" class="btn">Zu Amazon</a>
-      </div>
-
-      <div class="card">
-        <h3>Danish Oil</h3>
-        <p>Schnell trocknend, leicht aufzutragen und ideal für Anfänger. 
-           Sorgt für eine seidenmatte, widerstandsfähige Oberfläche.</p>
-        <a href="#" class="btn">Zu Amazon</a>
-      </div>
-    </div>
-
-    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
-      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
-    </p>
-  </section>
-
-  <section id="fehler-vermeiden">
-    <h2>Die 7 größten Holzpflege‑Fehler – und wie du sie vermeidest</h2>
-    <p>Viele Schäden an Holzmöbeln entstehen nicht durch Abnutzung, sondern durch falsche Pflege. 
-       Mit diesen typischen Fehlern bist du nicht allein – und mit ein paar einfachen Regeln 
-       kannst du sie dauerhaft vermeiden.</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>1. Zu viel Öl auftragen</h3>
-        <p>Ein häufiger Fehler: dicke Ölschichten. Sie trocknen schlecht, kleben und ziehen Staub an. 
-           Besser: immer dünn auftragen und Überschuss nach 10–20 Minuten abwischen.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Ohne Reinigung ölen</h3>
-        <p>Staub, Fett und alte Rückstände verhindern, dass das Öl einzieht. 
-           Eine gründliche Reinigung ist Pflicht, bevor du mit dem Ölen beginnst.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Falsche Körnung beim Schleifen</h3>
-        <p>Zu grobes Schleifpapier hinterlässt sichtbare Spuren, zu feines verschließt die Poren. 
-           Optimal sind 180–240er Körnung für eine glatte, aufnahmefähige Oberfläche.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. In kreisenden Bewegungen schleifen</h3>
-        <p>Schleife immer in Faserrichtung. Kreisbewegungen erzeugen matte Stellen und 
-           unruhige Oberflächen, die später sichtbar bleiben.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Öl nicht vollständig abwischen</h3>
-        <p>Wenn überschüssiges Öl auf der Oberfläche bleibt, entstehen klebrige, fleckige Stellen. 
-           Alles, was nicht einzieht, muss abgenommen werden.</p>
-      </div>
-
-      <div class="card">
-        <h3>6. Zu kurze Trocknungszeiten</h3>
-        <p>Holz braucht Zeit. Wird zu früh weitergearbeitet, kann die Oberfläche stumpf oder fleckig werden. 
-           Mindestens 12–24 Stunden trocknen lassen.</p>
-      </div>
-
-      <div class="card">
-        <h3>7. Ungeeignete Produkte verwenden</h3>
-        <p>Nicht jedes Öl passt zu jedem Holz. Naturöle, Hartwachsöle und Danish Oil haben unterschiedliche Eigenschaften. 
-           Wähle das Öl passend zur Nutzung und Holzart.</p>
-      </div>
-    </div>
-
-    <a href="#produkte-vergleich" class="btn">Passende Holzöle ansehen</a>
-  </section>
-
-  <section id="flecken-entfernen">
-    <h2>Flecken entfernen – Wasser, Fett & Kratzer richtig behandeln</h2>
-    <p>Holz ist ein natürliches Material und reagiert empfindlich auf Feuchtigkeit, Hitze und Fett. 
-       Viele Flecken lassen sich jedoch mit einfachen Methoden entfernen – ganz ohne aggressive Chemie. 
-       Hier findest du die häufigsten Probleme und die passenden Lösungen.</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Wasserflecken (hell)</h3>
-        <p>Helle Wasserflecken entstehen, wenn Feuchtigkeit in die obere Schicht eindringt. 
-           Lege ein Baumwolltuch auf die Stelle und fahre mit einem warmen Bügeleisen kurz darüber. 
-           Die Wärme zieht die Feuchtigkeit heraus.</p>
-      </div>
-
-      <div class="card">
-        <h3>Wasserflecken (dunkel)</h3>
-        <p>Dunkle Flecken sitzen tiefer im Holz. Hier hilft meist nur leichtes Anschleifen 
-           (180–240er Körnung) und anschließendes Nachölen. Bei sehr tiefen Flecken: 
-           Oxalsäure als Holzaufheller verwenden.</p>
-      </div>
-
-      <div class="card">
-        <h3>Fettflecken</h3>
-        <p>Fett zieht schnell ein. Streue Backpulver oder Speisestärke auf die Stelle und 
-           lasse es mehrere Stunden einwirken. Das Pulver zieht das Fett aus dem Holz. 
-           Danach vorsichtig abwischen und ggf. nachölen.</p>
-      </div>
-
-      <div class="card">
-        <h3>Kratzer</h3>
-        <p>Feine Kratzer lassen sich oft mit etwas Öl oder Möbelwachs auspolieren. 
-           Bei tieferen Kratzern hilft leichtes Anschleifen und eine dünne Schicht Öl 
-           oder Hartwachsöl.</p>
-      </div>
-
-      <div class="card">
-        <h3>Ringe von Gläsern</h3>
-        <p>Glasränder entstehen durch Feuchtigkeit + Druck. Reibe die Stelle mit einer 
-           Mischung aus Öl und Salz ein oder nutze eine Politur aus Natron und Wasser. 
-           Danach die Oberfläche nachpflegen.</p>
-      </div>
-
-      <div class="card">
-        <h3>Hitze- oder Brandflecken</h3>
-        <p>Leichte Brandspuren können vorsichtig ausgeschliffen werden. 
-           Bei dunklen, tiefen Stellen ist oft eine komplette Auffrischung der Oberfläche nötig.</p>
-      </div>
-    </div>
-
-    <a href="#holz-oelen" class="btn">Oberfläche nachbehandeln</a>
-  </section>
-
-  <section id="outdoor">
-    <h2>Outdoor Holzpflege – Gartenmöbel richtig schützen</h2>
-    <p>Holz im Außenbereich ist Sonne, Regen, Temperaturschwankungen und Feuchtigkeit ausgesetzt. 
-       Ohne regelmäßige Pflege verliert es schnell Farbe, wird rau oder bekommt Risse. 
-       Mit der richtigen Behandlung bleiben Gartenmöbel viele Jahre schön und wetterfest.</p>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>1. Reinigung vor jeder Behandlung</h3>
-        <p>Algen, Schmutz und Grauschleier entfernen. Am besten mit einer weichen Bürste 
-           und einem milden Holzreiniger. Hochdruckreiniger vermeiden – sie beschädigen die Fasern.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Vergrautes Holz auffrischen</h3>
-        <p>UV‑Strahlung lässt Holz vergrauen. Mit einem Entgrauer oder leichtem Anschliff 
-           erhält das Holz seine natürliche Farbe zurück. Danach unbedingt nachölen.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Wetterfestes Öl verwenden</h3>
-        <p>Für draußen eignen sich spezielle Outdoor‑ oder Terrassenöle. 
-           Sie enthalten UV‑Schutz und dringen tiefer ein als normale Möbelöle.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. Öl regelmäßig erneuern</h3>
-        <p>Outdoor‑Holz sollte je nach Witterung 1–2 Mal pro Jahr nachgeölt werden. 
-           Besonders nach dem Winter lohnt sich eine Auffrischung.</p>
-      </div>
-
-      <div class="card">
-        <h3>5. Möbel vor Nässe schützen</h3>
-        <p>Stauende Feuchtigkeit vermeiden: Möbel leicht erhöht stellen, 
-           Abstand zum Boden halten und bei Dauerregen abdecken.</p>
-      </div>
-
-      <div class="card">
-        <h3>6. Richtige Lagerung im Winter</h3>
-        <p>Gartenmöbel trocken und luftig lagern. Nicht in Folie einpacken – 
-           darunter sammelt sich Feuchtigkeit und fördert Schimmel.</p>
-      </div>
-    </div>
-
-    <a href="#produkte-vergleich" class="btn">Geeignete Outdoor‑Öle ansehen</a>
-  </section>
-
-  <section id="faq">
-    <h2>Häufige Fragen zur Holzpflege</h2>
-
-    <h3>Wie oft sollte man Holzmöbel ölen?</h3>
-    <p>Indoor‑Möbel sollten in der Regel alle 1–2 Jahre nachgeölt werden. 
-       Outdoor‑Holz je nach Witterung 1–2 Mal pro Saison.</p>
-
-    <h3>Welches Öl eignet sich für Holzmöbel?</h3>
-    <p>Für den Innenbereich eignen sich Leinöl, Danish Oil oder Hartwachsöl. 
-       Für den Außenbereich sind spezielle Terrassen‑ oder Outdoor‑Öle mit UV‑Schutz ideal.</p>
-
-    <h3>Wie entferne ich Wasserflecken aus Holz?</h3>
-    <p>Helle Wasserflecken lassen sich oft mit Wärme (Baumwolltuch + Bügeleisen) entfernen. 
-       Dunkle Flecken erfordern meist leichtes Anschleifen und anschließendes Nachölen.</p>
-  </section>
-
-</main>
-
-<footer>
-  &copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
