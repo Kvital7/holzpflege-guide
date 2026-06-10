@@ -20,6 +20,16 @@
       --shadow-dark: rgba(0,0,0,0.12);
     }
 
+    <script>
+  const burger = document.getElementById('burger');
+  const nav = document.querySelector('nav ul');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+</script>
+    
     body {
       margin: 0;
       background: var(--beige-light);
