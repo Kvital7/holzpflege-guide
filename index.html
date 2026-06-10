@@ -149,19 +149,15 @@
     }
 
     /* BUTTONS */
-    .btn {
-      display: inline-block;
-      padding: 1rem 1.9rem;
-      background: var(--wood-brown);
-      color: var(--white);
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      transition: 0.25s;
-      margin-top: 1.6rem;
-      margin-bottom: 0.6rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      .btn {
+        width: auto;                 /* nicht mehr 100% */
+        max-width: 90%;              /* aber trotzdem schön breit */
+        display: block;
+        margin: 1rem auto;           /* zentriert */
+        padding: 0.75rem 1.4rem;     /* harmonische Höhe */
+        font-size: 0.95rem;
+        border-radius: 14px;         /* weniger pillig */
+      }
     }
 
     .btn:hover {
