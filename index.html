@@ -28,15 +28,19 @@
       line-height: 1.75;
     }
 
-    /* HEADER */
-    header {
+    /* HEADER-TOP (Logo + Titel) */
+    .header-top {
       background: var(--beige-dark);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    /* Scroll-Ausblendung */
+    .header-top.hide {
+      transform: translateY(-100%);
+      opacity: 0;
     }
 
     .header-inner {
@@ -49,7 +53,7 @@
       flex-wrap: wrap;
     }
 
-    header img {
+    .header-inner img {
       height: 70px;
       border-radius: 12px;
       box-shadow:
@@ -57,17 +61,27 @@
         -4px -4px 10px rgba(255,255,255,0.8);
     }
 
-    header h1 {
+    .header-inner h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
       margin: 0;
       color: var(--forest);
     }
 
-    header p {
+    .header-inner p {
       font-size: 1.05rem;
       margin: 0.4rem 0 0;
       color: #555;
+    }
+
+    /* HEADER-NAV (bleibt sticky) */
+    .header-nav {
+      background: var(--beige-dark);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.6rem 0 0.8rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     /* NAVIGATION */
@@ -169,49 +183,19 @@
       transform: translateY(-3px);
     }
 
-    /* CARDS */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow:
-        8px 8px 18px var(--shadow-dark),
-        -8px -8px 18px var(--shadow-light);
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
     /* MOBILE HEADER + BUTTON FIX */
     @media (max-width: 600px) {
 
-      header {
-        padding: 0.9rem 0.8rem 0.6rem;
-      }
-
-      .header-inner {
-        gap: 0.5rem;
-      }
-
-      header img {
+      .header-inner img {
         height: 40px;
       }
 
-      header h1 {
+      .header-inner h1 {
         font-size: 1.38rem;
         line-height: 1.15;
       }
 
-      header p {
+      .header-inner p {
         font-size: 0.78rem;
         margin-top: 0.1rem;
       }
@@ -258,10 +242,6 @@
         font-size: 0.95rem;
         border-radius: 14px;
       }
-
-      .card {
-        padding: 1.4rem;
-      }
     }
 
     @keyframes fadeIn {
@@ -279,25 +259,33 @@
 <body>
 
 <header>
-  <div class="header-inner">
-    <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
-    <div>
-      <h1>Holzpflege‑Guide</h1>
-      <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+
+  <!-- SCROLL-HEADER TOP -->
+  <div class="header-top" id="headerTop">
+    <div class="header-inner">
+      <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
+      <div>
+        <h1>Holzpflege‑Guide</h1>
+        <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+      </div>
     </div>
   </div>
 
-  <nav>
-    <ul>
-      <li><a href="#start">Startseite</a></li>
-      <li><a href="#holz-oelen">Holz ölen</a></li>
-      <li><a href="#produkte-vergleich">Produkte</a></li>
-      <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
-      <li><a href="#flecken-entfernen">Flecken</a></li>
-      <li><a href="#outdoor">Outdoor</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
+  <!-- STICKY NAV -->
+  <div class="header-nav">
+    <nav>
+      <ul>
+        <li><a href="#start">Startseite</a></li>
+        <li><a href="#holz-oelen">Holz ölen</a></li>
+        <li><a href="#produkte-vergleich">Produkte</a></li>
+        <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
+        <li><a href="#flecken-entfernen">Flecken</a></li>
+        <li><a href="#outdoor">Outdoor</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+
 </header>
 
 <main>
@@ -434,4 +422,13 @@
       <div class="card"><h3>1. Reinigen</h3><p>Algen & Schmutz entfernen.</p></div>
       <div class="card"><h3>2. Entgrauen</h3><p>Farbe auffrischen.</p></div>
       <div class="card"><h3>3. Outdoor‑Öl</h3><p>Mit UV‑Schutz.</p></div>
-      <div class="card"><h3>4. Regelmäßig ölen</h3><
+      <div class="card"><h3>4. Regelmäßig ölen</h3><p>1–2× pro Jahr.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Häufige Fragen</h2>
+
+    <h3>Wie oft ölen?</h3>
+    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro
