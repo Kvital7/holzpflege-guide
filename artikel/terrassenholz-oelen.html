@@ -1,6 +1,253 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrassenholz richtig ölen</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- DEIN CSS (gekürzt integriert) -->
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      background: #FAF8F3;
+      color: #2A2A2A;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+
+    h1, h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .hero {
+      padding: 3rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      color: #6B6B6B;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+
+    .btn-primary {
+      background: #2F5D50;
+      color: white;
+    }
+
+    .btn-ghost {
+      border: 1px solid #ccc;
+      background: white;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    }
+
+    .section {
+      padding: 2rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 0.7rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #f3f3f3;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1rem 1rem;
+      color: #666;
+    }
+
+    .cta {
+      text-align: center;
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    @media(max-width:800px){
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1 class="hero-title">Terrassenholz richtig ölen</h1>
+      <p class="hero-sub">
+        So bleibt deine Terrasse langlebig, wetterfest und optisch wie neu.
+      </p>
+      <button class="btn btn-primary">Jetzt starten</button>
+      <button class="btn btn-ghost">Checkliste</button>
+    </div>
+
+    <div class="card">
+      <strong>Quick Tipp:</strong><br>
+      Öle nur bei trockenem Wetter – das verlängert die Haltbarkeit deutlich.
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <h2>Warum Terrassenholz ölen?</h2>
+    <div class="grid grid-4">
+      <div class="card">Schutz vor Feuchtigkeit</div>
+      <div class="card">Verhindert Risse</div>
+      <div class="card">Schöne Optik</div>
+      <div class="card">Längere Lebensdauer</div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section">
+    <h2>Anleitung</h2>
+    <div class="grid grid-3">
+      <div class="card">1. Reinigen</div>
+      <div class="card">2. Schleifen</div>
+      <div class="card">3. Trocknen</div>
+      <div class="card">4. Ölen</div>
+      <div class="card">5. Abwischen</div>
+      <div class="card">6. Trocknen lassen</div>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="section">
+    <h2>Öl-Vergleich</h2>
+    <table>
+      <tr>
+        <th>Öl</th>
+        <th>Vorteil</th>
+        <th>Einsatz</th>
+      </tr>
+      <tr>
+        <td>Naturöl</td>
+        <td>Umweltfreundlich</td>
+        <td>Natürliche Optik</td>
+      </tr>
+      <tr>
+        <td>Pigmentiert</td>
+        <td>UV-Schutz</td>
+        <td>Sonnige Lage</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">Wie oft ölen?<span>+</span></div>
+      <div class="faq-answer">1–2 Mal pro Jahr</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Wann ölen?<span>+</span></div>
+      <div class="faq-answer">Frühling oder Spätsommer</div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="cta">
+      <h2>Starte jetzt mit deiner Terrasse</h2>
+      <button class="btn btn-primary">Loslegen</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- JS für FAQ -->
+<script>
+  document.querySelectorAll(".faq-question").forEach(q => {
+    q.addEventListener("click", () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="de">
+<head>
   <meta charset="UTF-8" />
   <title>{{ARTIKEL_TITEL}} | Holzpflege‑Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
