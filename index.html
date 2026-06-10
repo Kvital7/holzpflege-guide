@@ -150,13 +150,18 @@
 
     /* BUTTONS */
     .btn {
-      width: 100%;
-      text-align: center;
-      padding: 0.75rem 1.2rem;   /* weniger Höhe */
-      font-size: 0.92rem;        /* etwas größer */
-      border-radius: 12px;       /* weniger rund = erwachsener Look */
-      letter-spacing: 0.3px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      display: inline-block;
+      padding: 1rem 1.9rem;
+      background: var(--wood-brown);
+      color: var(--white);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      transition: 0.25s;
+      margin-top: 1.6rem;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
     }
 
     .btn:hover {
@@ -186,7 +191,7 @@
       transform: translateY(-6px);
     }
 
-    /* MOBILE HEADER FIX */
+    /* MOBILE HEADER + BUTTON FIX */
     @media (max-width: 600px) {
 
       header {
@@ -243,22 +248,16 @@
         font-size: 1.85rem;
       }
 
-      
+      /* BUTTON FIX */
       .btn {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1.2rem;   /* weniger Höhe */
-        font-size: 0.92rem;        /* etwas größer */
-        border-radius: 12px;       /* weniger rund = erwachsener Look */
-        letter-spacing: 0.3px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        width: auto;
+        max-width: 90%;
+        display: block;
+        margin: 1rem auto;
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95rem;
+        border-radius: 14px;
       }
-    
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 14px rgba(0,0,0,0.22);
-      }
-    }
 
       .card {
         padding: 1.4rem;
@@ -435,46 +434,4 @@
       <div class="card"><h3>1. Reinigen</h3><p>Algen & Schmutz entfernen.</p></div>
       <div class="card"><h3>2. Entgrauen</h3><p>Farbe auffrischen.</p></div>
       <div class="card"><h3>3. Outdoor‑Öl</h3><p>Mit UV‑Schutz.</p></div>
-      <div class="card"><h3>4. Regelmäßig ölen</h3><p>1–2× pro Jahr.</p></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Häufige Fragen</h2>
-
-    <h3>Wie oft ölen?</h3>
-    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro Saison.</p>
-
-    <h3>Welches Öl?</h3>
-    <p>Innen: Leinöl, Danish Oil, Hartwachsöl. Außen: Terrassen‑/Outdoor‑Öl.</p>
-
-    <h3>Wasserflecken?</h3>
-    <p>Helle: Wärme. Dunkle: leicht schleifen + nachölen.</p>
-  </section>
-
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <div>&copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen</div>
-    <nav>
-      <ul>
-        <li><a href="#start">Start</a></li>
-        <li><a href="#holz-oelen">Holz ölen</a></li>
-        <li><a href="#produkte-vergleich">Produkte</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <div style="margin-top:0.6rem; font-size:0.8rem; color:#777;">
-      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+      <div class="card"><h3>4. Regelmäßig ölen</h3><
