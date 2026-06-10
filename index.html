@@ -28,15 +28,18 @@
       line-height: 1.75;
     }
 
-    /* HEADER */
-    header {
+    /* HEADER TOP (Logo + Titel) */
+    .header-top {
       background: var(--beige-dark);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .header-top.hide {
+      transform: translateY(-100%);
+      opacity: 0;
     }
 
     .header-inner {
@@ -49,7 +52,7 @@
       flex-wrap: wrap;
     }
 
-    header img {
+    .header-inner img {
       height: 70px;
       border-radius: 12px;
       box-shadow:
@@ -57,20 +60,29 @@
         -4px -4px 10px rgba(255,255,255,0.8);
     }
 
-    header h1 {
+    .header-inner h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
       margin: 0;
       color: var(--forest);
     }
 
-    header p {
+    .header-inner p {
       font-size: 1.05rem;
       margin: 0.4rem 0 0;
       color: #555;
     }
 
-    /* NAVIGATION */
+    /* HEADER NAV (nur Menü, sticky) */
+    .header-nav {
+      background: var(--beige-dark);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.6rem 0 0.8rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
     nav ul {
       list-style: none;
       margin: 0.8rem auto 0;
@@ -191,27 +203,19 @@
       transform: translateY(-6px);
     }
 
-    /* MOBILE HEADER FIX */
+    /* MOBILE HEADER + BUTTON FIX */
     @media (max-width: 600px) {
 
-      header {
-        padding: 0.9rem 0.8rem 0.6rem;
-      }
-
-      .header-inner {
-        gap: 0.5rem;
-      }
-
-      header img {
+      .header-inner img {
         height: 40px;
       }
 
-      header h1 {
+      .header-inner h1 {
         font-size: 1.38rem;
         line-height: 1.15;
       }
 
-      header p {
+      .header-inner p {
         font-size: 0.78rem;
         margin-top: 0.1rem;
       }
@@ -249,8 +253,13 @@
       }
 
       .btn {
-        width: 100%;
-        text-align: center;
+        width: auto;
+        max-width: 90%;
+        display: block;
+        margin: 1rem auto;
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95rem;
+        border-radius: 14px;
       }
 
       .card {
@@ -269,28 +278,37 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="header-inner">
-    <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
-    <div>
-      <h1>Holzpflege‑Guide</h1>
-      <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+
+  <!-- OBERER TEIL: Logo + Titel (wird ausgeblendet beim Scrollen) -->
+  <div class="header-top" id="headerTop">
+    <div class="header-inner">
+      <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
+      <div>
+        <h1>Holzpflege‑Guide</h1>
+        <p>Holzmöbel pflegen – natürlich, langlebig und ohne Vorwissen.</p>
+      </div>
     </div>
   </div>
 
-  <nav>
-    <ul>
-      <li><a href="#start">Startseite</a></li>
-      <li><a href="#holz-oelen">Holz ölen</a></li>
-      <li><a href="#produkte-vergleich">Produkte</a></li>
-      <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
-      <li><a href="#flecken-entfernen">Flecken</a></li>
-      <li><a href="#outdoor">Outdoor</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
+  <!-- UNTERER TEIL: Navigation bleibt sticky sichtbar -->
+  <div class="header-nav">
+    <nav>
+      <ul>
+        <li><a href="#start">Startseite</a></li>
+        <li><a href="#holz-oelen">Holz ölen</a></li>
+        <li><a href="#produkte-vergleich">Produkte</a></li>
+        <li><a href="#fehler-vermeiden">Fehler vermeiden</a></li>
+        <li><a href="#flecken-entfernen">Flecken</a></li>
+        <li><a href="#outdoor">Outdoor</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+
 </header>
 
 <main>
@@ -447,25 +465,21 @@
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <div>&copy; <span id="year"></span> Holzpflege‑Guide – Natürlich pflegen</div>
-    <nav>
-      <ul>
-        <li><a href="#start">Start</a></li>
-        <li><a href="#holz-oelen">Holz ölen</a></li>
-        <li><a href="#produkte-vergleich">Produkte</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <div style="margin-top:0.6rem; font-size:0.8rem; color:#777;">
-      Hinweis: Als Amazon‑Partner verdienst du an qualifizierten Käufen.
-    </div>
-  </div>
-</footer>
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const headerTop = document.getElementById('headerTop');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 40) {
+      headerTop.classList.add('hide');
+    } else {
+      headerTop.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+  });
 </script>
 
 </body>
