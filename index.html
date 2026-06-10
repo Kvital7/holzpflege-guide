@@ -28,7 +28,7 @@
       line-height: 1.75;
     }
 
-    /* HEADER-TOP (Logo + Titel) */
+    /* HEADER TOP (Logo + Titel) */
     .header-top {
       background: var(--beige-dark);
       padding: 2.5rem 1.5rem;
@@ -37,7 +37,6 @@
       transition: transform 0.35s ease, opacity 0.35s ease;
     }
 
-    /* Scroll-Ausblendung */
     .header-top.hide {
       transform: translateY(-100%);
       opacity: 0;
@@ -74,7 +73,7 @@
       color: #555;
     }
 
-    /* HEADER-NAV (bleibt sticky) */
+    /* HEADER NAV (nur Menü, sticky) */
     .header-nav {
       background: var(--beige-dark);
       position: sticky;
@@ -84,7 +83,6 @@
       border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
-    /* NAVIGATION */
     nav ul {
       list-style: none;
       margin: 0.8rem auto 0;
@@ -183,6 +181,28 @@
       transform: translateY(-3px);
     }
 
+    /* CARDS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow:
+        8px 8px 18px var(--shadow-dark),
+        -8px -8px 18px var(--shadow-light);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
     /* MOBILE HEADER + BUTTON FIX */
     @media (max-width: 600px) {
 
@@ -232,7 +252,6 @@
         font-size: 1.85rem;
       }
 
-      /* BUTTON FIX */
       .btn {
         width: auto;
         max-width: 90%;
@@ -242,24 +261,9 @@
         font-size: 0.95rem;
         border-radius: 14px;
       }
-      /* HEADER-TOP verschwindet beim Scrollen */
-      .header-top {
-        transition: transform 0.35s ease, opacity 0.35s ease;
-      }
-      
-      .header-top.hide {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      
-      /* NAV bleibt sticky */
-      .header-nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: var(--beige-dark);
-        padding: 0.6rem 0 0.8rem;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+
+      .card {
+        padding: 1.4rem;
       }
     }
 
@@ -275,28 +279,11 @@
   </style>
 </head>
 
-  <script>
-  const headerTop = document.getElementById('headerTop');
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll && currentScroll > 40) {
-      headerTop.classList.add('hide');
-    } else {
-      headerTop.classList.remove('hide');
-    }
-
-    lastScroll = currentScroll;
-  });
-</script>
-
 <body>
 
 <header>
 
-  <!-- OBERER TEIL: verschwindet beim Scrollen -->
+  <!-- OBERER TEIL: Logo + Titel (wird ausgeblendet beim Scrollen) -->
   <div class="header-top" id="headerTop">
     <div class="header-inner">
       <img src="holzpflege-guide-logo-dark.png" alt="Holzpflege‑Guide Logo">
@@ -307,7 +294,7 @@
     </div>
   </div>
 
-  <!-- UNTERER TEIL: bleibt sticky sichtbar -->
+  <!-- UNTERER TEIL: Navigation bleibt sticky sichtbar -->
   <div class="header-nav">
     <nav>
       <ul>
@@ -467,4 +454,33 @@
     <h2>Häufige Fragen</h2>
 
     <h3>Wie oft ölen?</h3>
-    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro
+    <p>Indoor: alle 1–2 Jahre. Outdoor: 1–2× pro Saison.</p>
+
+    <h3>Welches Öl?</h3>
+    <p>Innen: Leinöl, Danish Oil, Hartwachsöl. Außen: Terrassen‑/Outdoor‑Öl.</p>
+
+    <h3>Wasserflecken?</h3>
+    <p>Helle: Wärme. Dunkle: leicht schleifen + nachölen.</p>
+  </section>
+
+</main>
+
+<script>
+  const headerTop = document.getElementById('headerTop');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 40) {
+      headerTop.classList.add('hide');
+    } else {
+      headerTop.classList.remove('hide');
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+
+</body>
+</html>
